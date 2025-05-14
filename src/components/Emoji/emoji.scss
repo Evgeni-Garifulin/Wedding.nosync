@@ -1,0 +1,14 @@
+.emoji {
+	display: inline-block;
+	flex-shrink: 0;
+	vertical-align: baseline;
+	aspect-ratio: 1/1;
+}
+
+.emoji--inline {
+	position: relative;
+	top: .1em;
+
+.emoji--block {
+	width: auto;
+}}

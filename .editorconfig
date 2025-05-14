@@ -1,0 +1,9 @@
+root = true
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.{ts,js,tsx,jsx,css,scss}]
+indent_style = tab
+
+[*.{json,html,svg}]
+indent_style = space

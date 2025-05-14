@@ -1,0 +1,66 @@
+@use '@styles/vars' as *;
+
+.title {
+	font-weight: $fw-medium;
+}
+
+.title--h1 {
+	line-height: $title-h1-lh;
+	font-size: $title-h1-fz;
+}
+
+.title--h2 {
+	line-height: $title-h2-lh;
+	font-size: $title-h2-fz;
+}
+
+.title--h3 {
+	line-height: $title-h3-lh;
+	font-size: $title-h3-fz;
+}
+
+.title--h4 {
+	line-height: $title-h4-lh;
+	font-size: $title-h4-fz;
+}
+
+.title--h5 {
+	line-height: $title-h5-lh;
+	font-size: $title-h5-fz;
+}
+
+.title--semibold {
+	font-weight: $fw-semibold;
+}
+
+.title--medium {
+	font-weight: $fw-medium;
+}
+
+.title--regular {
+	font-weight: $fw-regular;
+}
+
+.title--italic {
+	font-style: $fs-italic;
+}
+
+.title--light {
+	color: $text-light;
+}
+
+.title--xlight {
+	color: $text-xlight;
+}
+
+.title--contrast {
+	color: $text-contrast;
+}
+
+.title--accent-dark {
+	color: $text-accent-dark;
+}
+
+.title--accent {
+	color: $text-accent;
+}

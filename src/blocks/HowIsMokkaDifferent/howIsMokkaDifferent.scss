@@ -1,0 +1,89 @@
+@use '@styles/vars' as *;
+
+.how-is-mokka-different {
+	.section__body {
+		position: relative;
+		overflow: hidden;
+
+		@include media(desktop-lg, desktop-md) {
+			padding-right: 568px;
+		}
+
+		@include media(desktop-sm, tablet-lg) {
+			padding-right: 30vw;
+		}
+	}
+}
+
+.how-is-mokka-different__item {
+	margin-top: 24px;
+
+	@include media(tablet-sm, mobile) {
+		margin-top: 16px;
+	}
+
+	@include media(desktop, tablet-lg) {
+		&:first-of-type {
+			margin-top: 32px;
+		}
+
+		&:last-of-type {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+.how-is-mokka-different__row {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	margin-top: 16px;
+
+	@include media(tablet-sm, mobile) {
+		margin-top: 8px;
+	}
+
+	&+.how-is-mokka-diffrent__row {
+		margin-top: 8px;
+	}
+}
+
+.how-is-mokka-different__row-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 12px;
+	width: 30px;
+	height: 30px;
+	border-radius: 12px;
+
+	@include media(tablet-sm, mobile) {
+		border-radius: 50%;
+	}
+
+	.how-is-mokka-different__row--check & {
+		background-color: $bg-green;
+	}
+
+	.how-is-mokka-different__row--thumbs-down & {
+		background-color: $bg-white;
+		border: 1px solid $cl-grey-2;
+	}
+}
+
+.how-is-mokka-different__image {
+	.picture__image {
+		position: absolute;
+		bottom: 0;
+		left: 760px;
+		width: 528px;
+
+		@include media(desktop-sm, tablet-lg) {
+			left: 70vw;
+		}
+
+		@include media(tablet-sm, mobile) {
+			display: none;
+		}
+	}
+}

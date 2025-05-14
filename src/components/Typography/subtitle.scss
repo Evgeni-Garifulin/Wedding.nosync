@@ -1,0 +1,38 @@
+@use '@styles/vars' as *;
+
+.subtitle {
+	line-height: $subtitle-q0-lh;
+	font-size: $subtitle-q0-fz;
+}
+
+.subtitle--semibold {
+	font-weight: $fw-semibold;
+}
+
+.subtitle--medium {
+	font-weight: $fw-medium;
+}
+
+.subtitle--regular {
+	font-weight: $fw-regular;
+}
+
+.subtitle--italic {
+	font-style: $fs-italic;
+}
+
+.subtitle--light {
+	color: $text-light;
+}
+
+.subtitle--xlight {
+	color: $text-xlight;
+}
+
+.subtitle--contrast {
+	color: $text-contrast;
+}
+
+.subtitle--accent {
+	color: $text-accent;
+}

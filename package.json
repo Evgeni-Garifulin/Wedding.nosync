@@ -1,0 +1,42 @@
+{
+  "name": "mokka",
+  "version": "1.0.0",
+  "private": true,
+  "description": "mokka",
+  "author": "Evgeni-Garifulin",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "dev": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "npm run clean && gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && rm -rf ../sales-website/* && cp -r public/* ../sales-website/ && cd ../sales-website && git pull && git add -A && git commit -am \"deploy\" && git push"
+  },
+  "dependencies": {
+    "gatsby": "^5.14.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-sass": "^6.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.83.0",
+    "swiper": "^11.1.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@types/react-helmet": "^6.1.11",
+    "classnames": "^2.5.1",
+    "gatsby-plugin-react-helmet": "^6.14.0",
+    "react-helmet": "^6.1.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.10.0",
+    "typescript": "^5.3.3"
+  }
+}

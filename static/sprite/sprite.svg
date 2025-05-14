@@ -1,0 +1,23 @@
+<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <symbol width="20" height="20" viewBox="0 0 20 20" id="chevron-right" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6L15 12L9 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+
+        <symbol width="20" height="20" viewBox="0 0 20 20" id="chevron-left" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6L9 12L15 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+
+        <symbol viewBox="0 0 24 24" id="arrow-down">
+            <path stroke="#89BB1E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10.208 15 5-5m-5-5.417V15 4.583Zm0 10.417-5-5 5 5Z"/>
+        </symbol>
+
+        <symbol viewBox="0 0 20 20" id="linkedin-logo">
+            <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.5 6.667v6.666a4.167 4.167 0 0 1-4.167 4.167H6.667A4.167 4.167 0 0 1 2.5 13.333V6.667A4.167 4.167 0 0 1 6.667 2.5h6.666A4.167 4.167 0 0 1 17.5 6.667ZM5.833 14.166V8.333"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.166 11.458c0-3.125 5-3.125 5 0v2.708m-5 0v-2.708 2.708Zm0-5.833v3.125-3.125ZM5.833 5.841l.009-.009"/>
+        </symbol>
+
+        <symbol viewBox="0 0 25 24" id="star">
+            <path d="m9.254 8.236 2.598-5.232a.911.911 0 0 1 1.63 0l2.598 5.232 5.809.844a.902.902 0 0 1 .502 1.542l-4.202 4.07.991 5.75c.128.738-.652 1.3-1.319.952l-5.194-2.716-5.195 2.716c-.666.349-1.446-.214-1.319-.953l.992-5.75-4.202-4.07a.902.902 0 0 1 .503-1.54l5.808-.845Z"/>
+        </symbol>
+    </defs>
+</svg>

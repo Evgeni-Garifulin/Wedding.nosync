@@ -1,0 +1,51 @@
+@use '@styles/vars' as *;
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	-webkit-appearance: none;
+	text-align: center;
+	text-decoration: none;
+	font-weight: $fw-medium;
+	border: 0;
+	outline: 0;
+	touch-action: manipulation;
+	transition: background-color .2s;
+	cursor: pointer;
+
+
+	&:active,
+	&:focus {
+		outline: 0;
+	}
+}
+
+.button--primary {
+	color: $text-default;
+	background: $bg-grey-1;
+}
+
+.button--light {
+	color: $text-contrast;
+	background: $ca-white-10;
+
+	&:hover {
+		background: $ca-white-30;
+	}
+}
+
+.button--sm {
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+.button--lg {
+	padding: 14px 18px;
+	border-radius: 16px;
+}
+
+.button--block {
+	width: 100%;
+}

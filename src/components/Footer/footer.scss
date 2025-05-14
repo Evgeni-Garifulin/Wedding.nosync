@@ -1,0 +1,60 @@
+@use '@styles/vars' as *;
+
+.page-footer {
+	padding-top: 42px;
+
+	@include media(tablet-sm, mobile) {
+		padding: 24px 16px 12px;
+	}
+}
+
+.footer__body {
+	color: $text-contrast;
+	background: $bg-dark;
+
+	@include media(tablet-sm, mobile) {
+			border-radius: 20px;
+	}
+}
+
+.page-footer__content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 auto;
+	padding: 42px 20px;
+	width: 100%;
+	max-width: 1320px;
+	gap: 20px;
+
+	@include media(tablet-sm, mobile) {
+		padding: 16px;
+
+	}
+}
+
+.page-footer__inner-link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+	padding: 4px;
+	text-decoration: none;
+	color: $text-contrast;
+
+	&:hover {
+		.page-footer__inner-link-text {
+			border-bottom-color: currentColor;
+		}
+	}
+}
+
+.page-footer__inner-link-text {
+	transform: translateY(1px);
+	border-bottom: 1px solid transparent;
+}
+
+.page-footer__text {
+	opacity: .4;
+}

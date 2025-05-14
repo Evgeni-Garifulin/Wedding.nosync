@@ -1,0 +1,51 @@
+@use '@styles/vars' as *;
+
+.slider-nav-button {
+	position: absolute;
+	top: 0;
+	bottom: 36px;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	text-align: center;
+	text-decoration: none;
+	background: $bg-white;
+	border: 0;
+	outline: 0;
+	transition: box-shadow .2s;
+	cursor: pointer;
+	z-index: 10;
+	-webkit-appearance: none;
+
+	@include media(tablet-sm, mobile) {
+		display: none;
+	}
+
+	&:hover {
+		box-shadow: 0 2px 6px rgba(0,0,0,.06), 0 10px 16px rgba(0,0,0,.06);
+
+		.slider-nav-button__icon {
+			transform: scale(1.1);
+		}
+	}
+
+	&:active {
+		box-shadow: none;
+	}
+}
+
+.slider-prev-button {
+	left: 0;
+	border-radius: 0 30px 30px 0;
+}
+
+.slider-next-button {
+	right: 0;
+	border-radius: 30px 0 0 30px;
+}
+
+.slider-nav-button__icon {
+	transition: transform .2s;
+}

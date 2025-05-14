@@ -1,0 +1,54 @@
+/* Basic */
+$cl-black: #000;
+$cl-white: #FFF;
+
+/* Red */
+$cl-red: #F93E3E;
+
+/* Yellow */
+$cl-yellow: #FFC224;
+
+/* Green*/
+$cl-green: #BBEC53;
+$cl-green-light: #D7F9AD;
+$cl-green-dark: #89BB1E;
+
+/* Grey */
+$cl-grey-1: #F8F8F9;
+$cl-grey-2: #F4F4F4;
+$cl-dark-grey: #454545;
+
+/* ALPHA COLORS */
+$ca-black-80: rgba($cl-black, .8);
+$ca-black-60: rgba($cl-black, .6);
+$ca-black-70: rgba($cl-black, .7);
+$ca-black-50: rgba($cl-black, .5);
+$ca-black-10: rgba($cl-black, .1);
+$ca-white-80: rgba($cl-white, .8);
+$ca-white-70: rgba($cl-white, .7);
+$ca-white-30: rgba($cl-white, .3);
+$ca-white-10: rgba($cl-white, .1);
+$ca-dark-grey-60: rgba($cl-dark-grey, .6);
+
+/* BACKGROUNDS */
+$bg-layout: $cl-grey-2;
+$bg-white: $cl-white;
+$bg-white-10: $ca-white-10;
+$bg-white-30: $ca-white-30;
+$bg-dark: $cl-black;
+$bg-green: $cl-green;
+$bg-green-light: $cl-green-light;
+$bg-grey-1: $cl-grey-1;
+$bg-grey-2: $cl-grey-2;
+
+/* BORDER COLORS */
+$border-white: $cl-white;
+$border-white-30: $ca-white-30;
+
+/* TYPO COLORS */
+$text-default: $cl-black;
+$text-light: $ca-black-80;
+$text-xlight: $ca-white-70;
+$text-contrast: $cl-white;
+$text-accent: $cl-green;
+$text-accent-dark: $cl-green-dark;

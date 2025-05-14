@@ -1,0 +1,47 @@
+/* TYPOGRAPHY */
+$ff-euclid: 'EuclidCircularA', Arial, sans-serif;
+$ff-text: $ff-euclid;
+
+/* Font weights */
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+
+/* Font style */
+$fs-italic: italic;
+
+/** h1 **/
+$title-h1-fz: 64px;
+$title-h1-lh: 72px;
+
+/** h2 **/
+$title-h2-fz: 40px;
+$title-h2-lh: 50px;
+
+/** h3 **/
+$title-h3-fz: 32px;
+$title-h3-lh: 36px;
+
+/** h4 **/
+$title-h4-fz: 24px;
+$title-h4-lh: 32px;
+
+/** h5 **/
+$title-h5-fz: 18px;
+$title-h5-lh: 24px;
+
+/* Subtitle */
+$subtitle-q0-fz: 24px;
+$subtitle-q0-lh: 32px;
+
+/** p0 **/
+$text-p0-fz: 20px;
+$text-p0-lh: 32px;
+
+/** p1 **/
+$text-p1-fz: 16px;
+$text-p1-lh: 24px;
+
+/** p2 **/
+$text-p2-fz: 14px;
+$text-p2-lh: 20px;

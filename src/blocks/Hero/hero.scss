@@ -1,0 +1,84 @@
+@use '@styles/vars' as *;
+
+.hero {
+	.section__body {
+		position: relative;
+		display: grid;
+		grid-template-columns: 6fr 6fr;
+		padding-top: 124px;
+		overflow: hidden;
+		background-color: $bg-dark;
+
+		@include media(tablet) {
+			grid-template-columns: 8fr 4fr;
+			padding: 140px 24px 60px;
+		}
+
+		@include media(mobile) {
+			grid-template-columns: 12fr;
+			padding: 154px 24px 16px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -12%;
+			left: 50%;
+			width: 80%;
+			height: 30%;
+			background-color: #BBEC53;
+			background-image: radial-gradient(circle, rgba(187, 236, 83, 0.5) 0%, rgba(187, 236, 83, 0) 100%);
+			border-radius: 50%;
+			transform: translateX(-50%);
+			filter: blur(80px);
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: $ca-black-60;
+			backdrop-filter: blur(1px);
+			z-index: 1;
+		}
+	}
+}
+
+.hero__message {
+	position: relative;
+	z-index: 2;
+}
+
+.hero__description {
+	padding-top: 16px;
+	opacity: .8;
+}
+
+.hero__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 32px;
+	z-index: 0;
+}
+
+.hero__widget-button {
+	margin-top: 68px;
+	padding: 6px;
+	max-width: 258px;
+
+	@include media(mobile) {
+		max-width: none;
+	}
+}
+
+.hero__widget-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6px;
+	text-align: center;
+}

@@ -1,0 +1,31 @@
+@use './vars' as *;
+
+#gatsby-focus-wrapper {
+	.swiper {
+		padding-bottom: 36px;
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
+	
+	.swiper-pagination {
+		top: auto;
+		bottom: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		line-height: 12px;
+	}
+
+	.swiper-pagination-bullet {
+		opacity: 1;
+		background: $ca-black-10;
+	}
+
+	.swiper-pagination-bullet-active {
+		width: 12px;
+		height: 12px;
+		background: $cl-black;
+	}
+}
