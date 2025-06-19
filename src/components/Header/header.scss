@@ -109,8 +109,6 @@
 	display: block;
 	padding: 6px 12px;
 	text-decoration: none;
-	font-weight: $fw-medium;
-	color: $text-contrast;
 	border: 1px solid transparent;
 	border-radius: 20px;
 	opacity: .7;
@@ -124,7 +122,6 @@
 .page-header__nav-item-bg {
 	position: absolute;
 	display: none;
-	font-weight: $fw-semibold;
 	border: 1px solid $border-white;
 	border-radius: 20px;
 	transition:
@@ -159,7 +156,7 @@
 		padding: 12px 16px;
 		width: 728px;
 		height: auto;
-		background-color: $ca-dark-grey-60;
+		background-color: $bg-dark;
 		backdrop-filter: blur(8px);
 
 		@include media(tablet-sm, mobile) {

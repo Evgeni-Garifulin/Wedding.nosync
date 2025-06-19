@@ -3,12 +3,11 @@
 @use "sass:string";
 @use 'vars/vars-typography' as *;
 
-$font-path: '/fonts/EuclidCircularA/';
-$font-name: 'EuclidCircularA';
+$font-path: '/fonts/';
 
-@mixin font-face($fileName: null, $weight: null, $style: null) {
+@mixin font-face($fileName: null, $fontFamily: null, $weight: null, $style: null) {
 	@font-face {
-		font-family: $font-name;
+		font-family: $fontFamily;
 		font-style: $style;
 		font-weight: $weight;
 		src: url($font-path + $fileName + '.woff2') format('woff2');
@@ -16,12 +15,8 @@ $font-name: 'EuclidCircularA';
 	}
 }
 
-// EuclidCircularA
+// Fonts
 // ===============================================
 
-@include font-face('EuclidCircularA-Regular', $fw-regular, normal);
-@include font-face('EuclidCircularA-Medium', $fw-medium, normal);
-@include font-face('EuclidCircularA-Semibold', $fw-semibold, normal);
-
-// Italic style
-@include font-face('EuclidCircularA-RegularItalic', $fw-regular, italic);
+@include font-face('Neucha', 'Neucha', $fw-regular, normal);
+@include font-face('Arvo-Bold', 'Arvo', $fw-bold, normal);

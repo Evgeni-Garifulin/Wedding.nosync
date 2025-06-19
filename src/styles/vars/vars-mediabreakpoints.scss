@@ -10,7 +10,6 @@ $mb-desktop-md: 1600px; /* > 1180 < 1600 */
 $mb-desktop-lg: $mb-desktop-md + 1; /* > 1601 */
 
 $container-width: 1320px;
-
 $media-queries: (
 	mobile: '(max-width: #{$mb-mobile-lg})',
 	mobile-sm: '(max-width: #{$mb-mobile-sm})',
@@ -26,7 +25,6 @@ $media-queries: (
 	desktop-md: '(min-width: #{($mb-desktop-sm + 1)}) and (max-width: #{$mb-desktop-md})',
 	desktop-lg: '(min-width: #{($mb-desktop-lg)})'
 );
-
 $media-prefixes: (
 	mobile: 'm',
 	mobile-sm: 'm-s',

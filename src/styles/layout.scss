@@ -16,7 +16,7 @@ body {
 
 html {
 	line-height: $text-p1-lh;
-	font-family: $ff-euclid;
+	font-family: $ff-neucha;
 	font-weight: $fw-regular;
 	font-size: $text-p1-fz;
 	color: $text-default;
@@ -36,6 +36,7 @@ body {
 }
 
 main {
+	position: relative;
 	min-width: 0;
 }
 
@@ -52,14 +53,6 @@ img {
 	overflow: hidden;
 }
 
-b {
-	font-family: EuclidCircularA-Semibold, Arial, sans-serif;
-	font-weight: $fw-semibold;
-}
-
-i {
-	font-style: $fs-italic;
-}
 
 .container {
 	position: relative;
@@ -67,46 +60,28 @@ i {
 	padding: 0 20px;
 	width: 100%;
 	max-width: $container-width;
+	max-width: 1366px;
 	white-space: break-spaces;
+	background-color: $bg-white-40;
+	border: 1px solid $border-white-30;
+	border-radius: 24px;
+	backdrop-filter: blur(24px);
+	isolation: isolate;
 
 	@include media(mobile) {
 		padding: 0 16px;
 	}
-}
 
-.list {
-	&>li {
-		position: relative;
-		margin-left: 20px;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: .6em;
-			left: -20px;
-			width: 4px;
-			height: 4px;
-			background-color: $text-default;
-			border-radius: 50%;
-
-			@include media(tablet-sm, mobile) {
-				top: .5em;
-			}
-		}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -1vw;
+		width: 30%;
+		height: 100%;
+		background-image: url('/img/container/bg-flowers-left.png');
+		background-position: center;
+		background-size: cover;
+		z-index: -1;
 	}
-}
-
-.list--red {
-	&>li {
-		&::before {
-			top: .4em;
-			width: 8px;
-			height: 8px;
-			background-color: $cl-red;
-		}
-	}
-}
-
-section[id] {
-	scroll-margin-top: 40px;
 }

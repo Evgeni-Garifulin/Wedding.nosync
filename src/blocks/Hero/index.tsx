@@ -1,78 +1,39 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './hero.scss';
 
-import { Section, Button, Title, Text, Emoji, Frame } from '@components';
-
-import { useResponsive } from '@hooks';
+import { motion, useInView } from 'framer-motion';
+import { Button, Title, Text } from '@components';
 
 const HeroSection: React.FC = () => {
-	const {
-		isDesktop,
-	} = useResponsive();
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: '-100px' });
 
 	return (
-		<Section
-			id="intro"
-			className="hero"
-		>
-			<div className="hero__message">
-				<Title
-					size={isDesktop ? "h1" : "h2"}
-					tag="h1"
-					color="accent"
-				>
-					AI assistant
-					<br />
-					<Title
-						size={isDesktop ? "h1" : "h2"}
-						tag="span"
-						color="contrast"
-					>
-						for talent teams
-					</Title>
+		<section id="intro" className="hero">
+			<motion.div
+				ref={ref}
+				initial={{ opacity: 0, y: 50 }}
+				animate={isInView ? { opacity: 1, y: 0 } : {}}
+				transition={{ duration: 1, ease: 'easeOut' }}
+				className="hero__message"
+			>
+				<Text font="arvo" color="black">
+					03 05 25&nbsp;/ 17:00
+				</Text>
+				<Title size="h1">
+					Приглашаем тебя,<br/> дорогой друг,<br/> на&nbsp;нашу свадьбу
 				</Title>
 				<Text
-					size={isDesktop ? "p0" : "p1"}
-					weight="regular"
-					color="contrast"
 					className="hero__description"
 				>
-					How TA&nbsp;teams offload screening calls and resume reviews and hire top talent based on&nbsp;evidence
+					Ждём вас на&nbsp;нашей свадьбе!
 				</Text>
-				<Frame
-					type="white-10"
-					borderRadius="16"
-					className="hero__widget-button"
-					noBorder
-				>
-					<Button
-						className="btn-open-modal"
-						size="lg"
-						block
-					>
-						Book a&nbsp;demo
-					</Button>
-
-					<Text size="p1" color="contrast" className="hero__widget-text">
-						<Emoji name="zap" size={20} block />
-						{' '}
-						Reclaim&nbsp;<b>50%+</b> of&nbsp;your time
-					</Text>
-				</Frame>
-			</div>
-			<video
-				autoPlay
-				muted
-				loop
-				playsInline
-				className="hero__video"
-				poster="/img/hero/video-underlay.jpg"
-			>
-				<source src="/video/background-video.webm" type="video/webm" />
-				<source src="/video/background-video.mp4" type="video/mp4" />
-			</video>
-		</Section>
+				<Button className="hero__widget-button" size="lg" block>
+					Я точно хочу пойти
+				</Button>
+			</motion.div>
+		</section>
 	);
-}
+};
 
 export default HeroSection;

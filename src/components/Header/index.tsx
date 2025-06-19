@@ -123,9 +123,7 @@ const Header: React.FC = () => {
 				</nav>
 
 				<div className="page-header__actions">
-					<Button className="btn-open-modal">Book a&nbsp;demo</Button>
-
-					<Button href="https://application.gomokka.com/auth/login/" state="light">Sign in</Button>
+					<Button className="btn-open-modal">Я точно хочу пойти</Button>
 				</div>
 			</div>
 		</header>

@@ -1,14 +1,11 @@
 /* TYPOGRAPHY */
-$ff-euclid: 'EuclidCircularA', Arial, sans-serif;
-$ff-text: $ff-euclid;
+$ff-neucha: 'Neucha', 'Comic Sans MS', 'Bradley Hand', 'Segoe Print', 'Lucida Handwriting', cursive;
+$ff-arvo: 'Arvo', 'Georgia', 'Times New Roman', 'Palatino Linotype', serif;
+$ff-text: $ff-neucha;
 
 /* Font weights */
 $fw-regular: 400;
-$fw-medium: 500;
-$fw-semibold: 600;
-
-/* Font style */
-$fs-italic: italic;
+$fw-bold: 700;
 
 /** h1 **/
 $title-h1-fz: 64px;

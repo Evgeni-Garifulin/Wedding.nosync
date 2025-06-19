@@ -1,7 +1,8 @@
 @use '@styles/vars' as *;
 
 .title {
-	font-weight: $fw-medium;
+	letter-spacing: 12px;
+	font-weight: $fw-regular;
 }
 
 .title--h1 {
@@ -29,36 +30,8 @@
 	font-size: $title-h5-fz;
 }
 
-.title--semibold {
-	font-weight: $fw-semibold;
-}
-
-.title--medium {
-	font-weight: $fw-medium;
-}
-
 .title--regular {
 	font-weight: $fw-regular;
-}
-
-.title--italic {
-	font-style: $fs-italic;
-}
-
-.title--light {
-	color: $text-light;
-}
-
-.title--xlight {
-	color: $text-xlight;
-}
-
-.title--contrast {
-	color: $text-contrast;
-}
-
-.title--accent-dark {
-	color: $text-accent-dark;
 }
 
 .title--accent {

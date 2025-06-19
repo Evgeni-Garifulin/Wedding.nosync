@@ -1,42 +1,16 @@
 @use '@styles/vars' as *;
 
-.text--p2 {
-	line-height: $text-p2-lh;
-	font-size: $text-p2-fz;
+.text {
+	letter-spacing: 10px;
+	font-family: $fw-regular;
 }
 
-.text--p1 {
-	line-height: $text-p1-lh;
-	font-size: $text-p1-fz;
+.text--arvo {
+	font-family: $ff-arvo;
 }
 
-.text--p0 {
-	line-height: $text-p0-lh;
-	font-size: $text-p0-fz;
-}
-
-.text--semibold {
-	font-weight: $fw-semibold;
-}
-
-.text--medium {
-	font-weight: $fw-medium;
-}
-
-.text--regular {
-	font-weight: $fw-regular;
-}
-
-.text--italic {
-	font-style: $fs-italic;
-}
-
-.text--light {
-	color: $text-light;
-}
-
-.text--xlight {
-	color: $text-xlight;
+.text--black {
+	color: $text-black;
 }
 
 .text--contrast {

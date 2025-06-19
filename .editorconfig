@@ -6,4 +6,4 @@ trim_trailing_whitespace = true
 indent_style = tab
 
 [*.{json,html,svg}]
-indent_style = space
+indent_style = tab

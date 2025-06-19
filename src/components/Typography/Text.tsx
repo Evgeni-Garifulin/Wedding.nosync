@@ -4,20 +4,17 @@ import { type TypographyProps } from './types';
 import './text.scss';
 
 export interface TextProps extends TypographyProps {
-	size: 'p2' | 'p1' | 'p0';
-	weight?: 'semibold' | 'medium' | 'regular';
-	color?: 'light' | 'xlight' | 'contrast' | 'accent';
+	color?: 'contrast' | 'accent' | 'black';
+	font?: 'arvo' | 'neucha';
 }
 
 const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) => {
 	const {
 		tag = 'p',
+		font = 'neucha',
 		children,
 		color,
 		className,
-		size,
-		weight,
-		italic,
 		...rest
 	} = props;
 
@@ -25,12 +22,8 @@ const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) =>
 
 	const resultClassName = cn(
 		'text',
-		{
-			'text--italic': italic,
-			[`text--${size}`]: size,
-			[`text--${weight}`]: weight,
-			[`text--${color}`]: color,
-		},
+		{ [`text--${color}`]: color },
+		{ [`text--${font}`]: font },
 		className,
 	);
 
