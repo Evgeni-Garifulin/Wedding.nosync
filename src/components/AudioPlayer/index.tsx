@@ -13,7 +13,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [duration, setDuration] = useState(0);
 	const [currentTime, setCurrentTime] = useState(0);
-	const [isScrolled, setIsScrolled] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
 
 	const togglePlayPause = () => {
@@ -49,19 +48,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 		};
 	}, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			setIsScrolled(scrollTop > 0);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
 	return (
-		<div className={cn('audio-player', { 'audio-player--scrolled': isScrolled },
-		{ 'audio-player--playing': isPlaying }
+		<div className={cn('audio-player',
+			{ 'audio-player--playing': isPlaying }
 		)}>
 			<audio
 				ref={audioRef}
@@ -76,10 +65,23 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 					onClick={togglePlayPause}
 				>
 					{isPlaying ? (
-						<img src="/icons/pause.svg" alt="выкл" width="40" height="40" className="audio-player__play-btn-icon" />
+						<img
+							src="./icons/pause.svg"
+							alt="выкл"
+							width="40"
+							height="40"
+							loading="eager"
+							className="audio-player__play-btn-icon"
+						/>
 					) : (
-
-						<img src="/icons/play.svg" alt="вкл" width="40" height="40" className="audio-player__play-btn-icon" />
+						<img
+							src="./icons/play.svg"
+							alt="вкл"
+							width="40"
+							height="40"
+							loading="eager"
+							className="audio-player__play-btn-icon"
+						/>
 					)}
 				</button>
 
@@ -101,7 +103,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 				</Text>
 			</div>
 			<img
-				src="/icons/turn-on.svg"
+				src="./icons/turn-on.svg"
 				alt="Включи"
 				className="audio-player__arrow"
 				width="60"

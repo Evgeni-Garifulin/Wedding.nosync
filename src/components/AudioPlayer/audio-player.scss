@@ -37,13 +37,12 @@
 
 .audio-player__arrow {
 	position: absolute;
-	top: -40px;
+	top: -48px;
 	left: 20px;
 	width: 60px;
 	height: 60px;
 	transform: translateX(0);
 	opacity: 1;
-	animation: arrow-bounce 2s ease-in-out infinite;
 	transition: transform .3s, opacity .3s;
 }
 
@@ -62,11 +61,11 @@
 .audio-player--playing {
 	.audio-player__arrow {
 		@include media(mobile, tablet) {
-			transform: translateX(-100px);
+			transform: translateX(-100px) rotate(-180deg) !important;
 		}
 
 		@include media(desktop) {
-			opacity: 0;
+			opacity: 0 !important;
 		}
 	}
 }
