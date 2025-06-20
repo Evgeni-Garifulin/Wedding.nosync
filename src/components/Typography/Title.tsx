@@ -5,8 +5,7 @@ import './title.scss';
 
 export interface TitleProps extends TypographyProps {
 	size: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
-	color?: 'light' | 'xlight' | 'contrast' | 'accent-dark' | 'accent';
-	weight?: 'semibold' | 'medium' | 'regular';
+	color?: 'contrast' | 'accent' | 'black';
 }
 
 const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) => {
@@ -16,8 +15,6 @@ const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) 
 		color,
 		className,
 		size,
-		italic,
-		weight,
 		...rest
 	} = props;
 
@@ -26,9 +23,7 @@ const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) 
 	const resultClassName = cn(
 		'title',
 		{
-			'title--italic': italic,
 			[`title--${size}`]: size,
-			[`title--${weight}`]: weight,
 			[`title--${color}`]: color,
 		},
 		className,

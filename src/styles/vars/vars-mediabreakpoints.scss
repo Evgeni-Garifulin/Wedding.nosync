@@ -9,7 +9,7 @@ $mb-desktop-sm: 1320px; /* > 1140 < 1320 */
 $mb-desktop-md: 1600px; /* > 1180 < 1600 */
 $mb-desktop-lg: $mb-desktop-md + 1; /* > 1601 */
 
-$container-width: 1320px;
+$container-width: 1280px;
 $media-queries: (
 	mobile: '(max-width: #{$mb-mobile-lg})',
 	mobile-sm: '(max-width: #{$mb-mobile-sm})',

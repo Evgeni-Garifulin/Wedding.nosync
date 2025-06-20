@@ -1,0 +1,145 @@
+@use '@styles/vars' as *;
+
+.usefull__list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	justify-items: center;
+	gap: 32px;
+	row-gap: 42px;
+
+	@include media(tablet, desktop) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 32px;
+	}
+}
+
+.usefull__item {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		transition: transform 0.3s ease;
+		z-index: -1;
+	}
+}
+
+// Канал в Телеграмм - маленькое белое пятно
+.usefull__item--telegram-channel {
+	&::before {
+		top: 15%;
+		left: 15%;
+		width: 60%;
+		height: 170%;
+		background-color: white;
+		border: 1px solid #b3b5a05a;
+		border-radius: 73% 27% 35% 65% / 42% 58% 42% 58%;
+		transform: rotate(15deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			width: 65%;
+			height: 150%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(25deg) scale(1.1);
+	}
+}
+
+// Телеграмм Жени - среднезеленое пятно
+.usefull__item--telegram-zhenya {
+	&::before {
+		top: 2.5%;
+		left: 0;
+		width: 60%;
+		height: 170%;
+		background-color: #B3B5A0; // желто-зеленый
+		border-radius: 48% 52% 68% 32% / 65% 35% 65% 35%;
+		transform: rotate(-20deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			width: 65%;
+			height: 150%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(-30deg) scale(1.05);
+	}
+}
+
+// Телеграмм Агнеты - розовое большое пятно
+.usefull__item--telegram-agneta {
+	&::before {
+		top: -28%;
+		left: 15%;
+		width: 60%;
+		height: 170%;
+		background-color: #EFD2CA; // светло-персиковый
+		border-radius: 61% 39% 24% 76% / 35% 74% 26% 65%;
+		transform: rotate(45deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			left: 30%;
+			width: 55%;
+			height: 220%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(55deg) scale(1.05);
+	}
+}
+
+// PDF - кремовое пятно
+.usefull__item--pdf {
+	&::before {
+		top: -24%;
+		left: 24%;
+		width: 60%;
+		height: 170%;
+		background-color: #F5F0E2; // кремовый
+		border-radius: 35% 65% 72% 28% / 44% 56% 44% 56%;
+		transform: rotate(-10deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			left: 30%;
+			width: 55%;
+			height: 220%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(-20deg) scale(1.08);
+	}
+}
+
+// Погода - бирюзовое пятно
+.usefull__item--weather {
+	&::before {
+		top: 0;
+		left: -5%;
+		width: 60%;
+		height: 170%;
+		background-color: #A4C4BE; // средний бирюзовый
+		border-radius: 52% 48% 33% 67% / 58% 29% 71% 42%;
+		transform: rotate(30deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			left: 30%;
+			width: 55%;
+			height: 220%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(40deg) scale(1.05);
+	}
+}

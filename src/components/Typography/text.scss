@@ -1,8 +1,13 @@
 @use '@styles/vars' as *;
 
 .text {
+	line-height: 1.2;
+	letter-spacing: 1px;
+	font-family: $ff-neucha;
+}
+
+.text--wide {
 	letter-spacing: 10px;
-	font-family: $fw-regular;
 }
 
 .text--arvo {

@@ -1,0 +1,68 @@
+@use '@styles/vars' as *;
+
+.main-info__flowers {
+	display: flex;
+	gap: 64px;
+	justify-content: center;
+
+	@include media (mobile) {
+		flex-direction: column;
+	}
+
+	@include media (tablet, desktop) {
+		align-items: center;
+	}
+}
+
+.main-info__flower {
+	position: relative;
+	display: flex;
+	gap: 16px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s ease;
+		z-index: -1;
+		inset: 0;
+	}
+}
+
+.main-info__flower--white {
+	&::before {
+		background-color: white;
+		border: 1px solid #b3b5a05a;
+		border-radius: 73% 27% 35% 65% / 42% 58% 42% 58%;
+		transform: rotate(15deg);
+	}
+
+	&:hover::before {
+		transform: rotate(25deg) scale(1.05);
+	}
+}
+
+.main-info__flower--green {
+	&::before {
+		background-color: #c8d1a8c0;
+		border-radius: 48% 52% 68% 32% / 65% 35% 65% 35%;
+		transform: rotate(-20deg);
+	}
+
+	&:hover::before {
+		transform: rotate(-30deg) scale(1.05);
+	}
+}
+
+.main-info__flower--pink {
+	&::before {
+		background-color: #F5C9C9c0;
+		border-radius: 61% 39% 24% 76% / 35% 74% 26% 65%;
+		transform: rotate(45deg);
+	}
+
+	&:hover::before {
+		transform: rotate(55deg) scale(1.05);
+	}
+}

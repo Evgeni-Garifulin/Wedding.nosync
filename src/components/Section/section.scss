@@ -1,0 +1,38 @@
+@use '@styles/vars' as *;
+
+.section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	text-align: left;
+
+	@include media(tablet, desktop) {
+		align-items: center;
+		text-align: center;
+	}
+
+	@include media(desktop) {
+		min-height: 100vh;
+	}
+}
+
+.section__inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	max-width: 800px;
+	text-align: left;
+	gap: 24px;
+
+	@include media(desktop) {
+		gap: 42px;
+	}
+
+	@include media(tablet, desktop) {
+		align-items: center;
+		text-align: center;
+	}
+}

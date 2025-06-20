@@ -43,8 +43,8 @@ const Button: React.FC<ButtonProps> = ({
 
 	const buttonChildren = (
 		<Text
+			thinText
 			tag="span"
-			size={size === "sm" ? "p2" : "p1"}
 			color={state === "primary" ? undefined : "contrast"}
 		>
 			{children}

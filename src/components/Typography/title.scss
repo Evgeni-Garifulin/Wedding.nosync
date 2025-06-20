@@ -1,37 +1,33 @@
 @use '@styles/vars' as *;
 
 .title {
-	letter-spacing: 12px;
+	letter-spacing: 2px;
 	font-weight: $fw-regular;
+
+	@include media(tablet, desktop) {
+		letter-spacing: 12px;
+	}
 }
 
 .title--h1 {
-	line-height: $title-h1-lh;
-	font-size: $title-h1-fz;
+		line-height: $title-h1-lh-mobile;
+		font-size: $title-h1-fz-mobile;
+
+	@include media(desktop) {
+		line-height: $title-h1-lh;
+		font-size: $title-h1-fz;
+
+	}
 }
 
 .title--h2 {
-	line-height: $title-h2-lh;
-	font-size: $title-h2-fz;
-}
+	line-height: $title-h2-lh-mobile;
+	font-size: $title-h2-fz-mobile;
 
-.title--h3 {
-	line-height: $title-h3-lh;
-	font-size: $title-h3-fz;
-}
-
-.title--h4 {
-	line-height: $title-h4-lh;
-	font-size: $title-h4-fz;
-}
-
-.title--h5 {
-	line-height: $title-h5-lh;
-	font-size: $title-h5-fz;
-}
-
-.title--regular {
-	font-weight: $fw-regular;
+	@include media(desktop) {
+		line-height: $title-h2-lh;
+		font-size: $title-h2-fz;
+	}
 }
 
 .title--accent {

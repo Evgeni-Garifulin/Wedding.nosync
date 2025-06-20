@@ -13,11 +13,10 @@ interface PictureProps {
 	srcSet: { [key: string]: string };
 }
 
-// Функция для определения MIME-типа изображения по расширению
 const getImageType = (src: string): string => {
 	if (src.endsWith('.png')) return 'image/png';
 	if (src.endsWith('.jpg') || src.endsWith('.jpeg')) return 'image/jpeg';
-	return ''; // Можно добавить обработку для других типов
+	return '';
 };
 
 const Picture: React.FC<PictureProps> = ({

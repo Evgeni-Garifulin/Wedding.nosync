@@ -3,7 +3,7 @@ $cl-black: #000;
 $cl-white: #FFF;
 
 /* Pink */
-$cl-pink: #F4D5D9;
+$cl-pink: #FAFCF8;
 
 /* Red */
 $cl-red: #F93E3E;
@@ -11,6 +11,9 @@ $cl-red-dark: #F9515B;
 
 /* Yellow */
 $cl-yellow: #FFC224;
+
+/* Brown */
+$cl-brown: #B48770;
 
 /* Green */
 $cl-green: #404B43;
@@ -25,6 +28,7 @@ $bg-layout: $cl-pink;
 $bg-dark: $cl-green;
 $bg-light: $cl-white;
 $bg-white-40: $ca-white-40;
+$bg-brown: $cl-brown;
 
 /* BORDER COLORS */
 $border-white: $cl-white;
