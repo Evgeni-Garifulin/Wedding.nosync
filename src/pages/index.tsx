@@ -2,7 +2,7 @@ import React from 'react';
 import type { PageProps } from 'gatsby'
 
 import { Layout } from '@components';
-import { HeroSection, DressCode, MainInfo, Place, Usefull } from '@blocks';
+import { HeroSection, DressCode, MainInfo, Place, Usefull, Remember } from '@blocks';
 
 const IndexPage: React.FC<PageProps> = () => {
 
@@ -19,6 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
 			<MainInfo />
 			<Place />
 			<Usefull />
+			<Remember />
 		</Layout>
 	)
 }

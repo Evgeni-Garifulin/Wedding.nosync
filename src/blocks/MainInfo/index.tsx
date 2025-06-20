@@ -51,7 +51,7 @@ const MainInfo: React.FC = () => {
 			</ul>
 
 			<Text>
-				Пожалуйста, пройдите опрос в&nbsp;группе. Вы&nbsp;нам очень поможете!
+				И пожалуйста, пройдите опрос в&nbsp;группе. Вы&nbsp;нам очень поможете!
 			</Text>
 
 			<Button size="lg" href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">

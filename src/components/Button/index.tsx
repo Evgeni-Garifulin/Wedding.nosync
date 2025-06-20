@@ -43,7 +43,6 @@ const Button: React.FC<ButtonProps> = ({
 
 	const buttonChildren = (
 		<Text
-			thinText
 			tag="span"
 			color={state === "primary" ? undefined : "contrast"}
 		>

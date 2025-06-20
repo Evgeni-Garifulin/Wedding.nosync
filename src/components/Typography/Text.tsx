@@ -6,7 +6,6 @@ import './text.scss';
 export interface TextProps extends TypographyProps {
 	color?: 'contrast' | 'accent' | 'black';
 	font?: 'arvo' | 'neucha';
-	thinText?: boolean;
 }
 
 const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) => {
@@ -16,7 +15,6 @@ const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) =>
 		children,
 		color,
 		className,
-		thinText,
 		...rest
 	} = props;
 
@@ -26,7 +24,6 @@ const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) =>
 		'text',
 		{ [`text--${color}`]: color },
 		{ [`text--${font}`]: font },
-		{ 'text--thin': thinText },
 		className,
 	);
 

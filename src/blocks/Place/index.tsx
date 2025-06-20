@@ -34,14 +34,14 @@ const Place: React.FC = () => {
 					{formatCountdown()}
 				</Text>
 			</Text>
-			<Text thinText>
+			<Text>
 				Курганский стрелковый клуб<br />
 				Адрес и&nbsp;подробная информация на&nbsp;карте ниже
 			</Text>
 
 			<div style={{ position: 'relative', overflow: 'hidden' }} className='place__map-wrapper'>
 				<iframe
-					src="https://yandex.com/map-widget/v1/org/kurgansky_strelkovy_klub/96399076417/?ll=65.381893%2C55.391774&z=16"
+					src="https://yandex.com/map-widget/v1/org/kurgansky_strelkovy_klub/96399076417/?ll=65.381841%2C55.391786&z=16"
 					frameBorder="1"
 					allowFullScreen={true}
 					style={{ position: 'relative' }}
@@ -49,7 +49,7 @@ const Place: React.FC = () => {
 					className="place__map"
 				/>
 			</div>
-			<Text thinText>
+			<Text>
 				Кнопка навигатора для лиги лени
 			</Text>
 			<Button size="lg" href="yandexnavi://build_route_on_map?lat_from=55.74&lon_from=37.60&lat_to=55.76&lon_to=37.64" rel="noopener noreferrer">

@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Asia/Yekaterinburg
+LAST-MODIFIED:20240422T053451Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/Asia/Yekaterinburg
+X-LIC-LOCATION:Asia/Yekaterinburg
+BEGIN:STANDARD
+TZNAME:+05
+TZOFFSETFROM:+0500
+TZOFFSETTO:+0500
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20250620T203448Z
+UID:1750451470719-84750@ical.marudot.com
+DTSTART;TZID=Asia/Yekaterinburg:20250703T170000
+DTEND;TZID=Asia/Yekaterinburg:20250703T220000
+SUMMARY:Свадьба Агнеты и Жени
+URL:https://www.wiwiwiuwawa.com
+DESCRIPTION:Приглашаем всех на нашу свадьбу! Будем очень всех ждать к 03/06/2025 года в 17 часов в "Курганском стрелковом клубе".
+Дресс-код и всю важную информацию читайте в нашей группе https://t.me/+PbOq45ueX-9lYzE6 и на сайте-приглашении.
+Приходите в цветах нашей палитры - от нежных бежевых до глубоких зеленых тонов.
+С любовью ждем каждого из вас!
+P.S. Канье Вест - гений.
+LOCATION:Ресторан "Стрелковый Клуб"
+CLASS:PRIVATE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Свадьба Агнеты и Жени
+TRIGGER:-P2D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Свадьба Агнеты и Жени
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

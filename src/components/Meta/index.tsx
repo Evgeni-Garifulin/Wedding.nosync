@@ -37,46 +37,6 @@ const Meta: React.FC<MetaProps> = ({ title, description, image, keywords }) => {
 				as="image"
 				type="image/svg+xml"
 			/>
-			<script type="application/ld+json">
-				{`{
-				"@context": "https://schema.org",
-				"@graph": [
-					{
-					"@type": "Organization",
-					"name": "Mokka",
-					"legalName": "Mokka",
-					"foundingDate": "October 2023",
-					"email": "info@gomokka.com",
-					"url": "https://www.gomokka.com/",
-					"@id": "https://www.gomokka.com/#problems",
-					"knowsLanguage": [
-						"https://www.wikidata.org/wiki/Q1860"
-					],
-					"knowsAbout": [
-						"https://www.wikidata.org/wiki/Q899277",
-						"https://www.wikidata.org/wiki/Q11660"
-					],
-					"logo": "http://www.gomokka.com/favicon/favicon.svg",
-					"sameAs": [
-						"https://www.linkedin.com/company/go-mokka/"
-					],
-					"founders": [
-						{
-						"@type": "Person",
-						"name": "Max Krasnykh"
-						}
-					],
-					"address": {
-						"addressLocality": "New York",
-						"addressRegion": "NY",
-						"postalCode": "10001",
-						"addressCountry": "US"
-					},
-					"description": "Streamline hiring with Mokka: automate screening calls and resume reviews to save 50%+ of your team’s time. Identify top talent using an evidence-based approach while improving candidate experience. Trusted by recruiters at Dell, IBM, Intel, and more to revolutionize talent acquisition."
-					}
-				]
-				}`}
-			</script>
 		</Helmet>
 	);
 };

@@ -31,6 +31,16 @@ const HeroSection: React.FC = () => {
 			<Text font="arvo" color="black">
 				03&nbsp;06&nbsp;25&nbsp;/ 17:00
 			</Text>
+			<Text tag="span">
+				<a
+					href="/calendar/wedding-calendar-add.ics"
+					download="wedding-calendar-add.ics"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Добавить в календарь
+				</a>
+			</Text>
 			<Text tag="h1" color="black">
 				Приглашение на&nbsp;свадьбу Агнеты и&nbsp;Жени
 			</Text>
@@ -44,7 +54,7 @@ const HeroSection: React.FC = () => {
 				Стрелковый клуб&nbsp;| Курган
 			</Text>
 
-			<Button size="lg" href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">Я точно хочу пойти</Button>
+			<Button size="lg" href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">Я точно буду</Button>
 
 			<img
 				src="/icons/leaf.svg"

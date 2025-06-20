@@ -27,17 +27,3 @@
 		transform: scale(1.15);
 	}
 }
-
-.dresscode__list {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 12px;
-
-	li {
-		list-style: disc;
-		line-height: 1.2;
-		letter-spacing: 1px;
-		font-family: $ff-neucha;
-	}
-}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollSmoother from 'gsap/ScrollSmoother';
+import { AudioPlayer } from '@components';
 import HeadBase from '../HeadBase';
 import Meta from '../Meta';
 
@@ -101,6 +102,9 @@ const Layout: React.FC<LayoutProps> = ({
 					</main>
 				</div>
 			</div>
+			<AudioPlayer
+				src="/audio/mumiy-trol_nevesta.mp3"
+			/>
 		</>
 	);
 };

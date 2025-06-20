@@ -63,7 +63,7 @@ const DressCode: React.FC = () => {
 
 	return (
 		<Section id="dresscode" title="Гамма:">
-			<Text thinText>
+			<Text>
 				Мы&nbsp;будем очень рады, если вы&nbsp;поддержите нашу цветовую гамму в&nbsp;своих нарядах. Выберите любой из&nbsp;представленных оттенков&nbsp;&mdash; от&nbsp;нежных бежевых до&nbsp;глубоких зеленых тонов. Это поможет создать гармоничную и&nbsp;элегантную атмосферу нашего праздника.
 			</Text>
 
@@ -154,11 +154,11 @@ const DressCode: React.FC = () => {
 			<Title size="h2">
 				Дресс код:
 			</Title>
-			<Text thinText>
+			<Text>
 				Мы&nbsp;приглашаем вас одеться в&nbsp;стиле Modern Formal&nbsp;/ Elegant Minimalismalism&nbsp;&mdash; элегантно, но&nbsp;неформально. Подойдут красивые платья, блузки с&nbsp;юбками или брюками, костюмы в&nbsp;мягких тонах. Главное&nbsp;&mdash; чувствовать себя комфортно и&nbsp;уверенно. Избегайте слишком строгих деловых костюмов и&nbsp;спортивной одежды. <br /><br />
 				Подробнее можно спросить <a href="https://t.me/voytovich_agn" target="_blank" rel="noopener noreferrer">Агнету</a>, либо прочитать список ниже:
 			</Text>
-			<ul className="dresscode__list">
+			<ul className="list">
 				<li>Плавные силуэты, чистые линии</li>
 				<li>Монохромные и нейтральные цвета: оливковый, бежевый, карамельный, шампань, бронза</li>
 				<li>Материалы: сатин, шелк, костюмная ткань, креп, трикотаж с люрексом</li>

@@ -95,24 +95,41 @@ a {
 
 .section+.section {
 	@include media(mobile) {
-		padding-top: 60px;
+		padding-block: 30px;
+		border-top: 1px dashed $ca-green-30;
 	}
 
 	@include media(tablet) {
-		padding-top: 120px;
+		padding-block: 60px;
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	text-align: left;
+
+	li {
+		list-style: disc;
+		line-height: 1.2;
+		letter-spacing: 1px;
+		font-family: $ff-neucha;
 	}
 }
 
 .bg-flowers {
 	position: absolute;
-	top: 40px;
+	top: 100px;
+	bottom: 100px;
 	width: 160px;
-	height: 100%;
+	height: calc(100% + 200px);
 	background-image: url('/img/container/bg-flowers-left@1x.png');
 	background-position: center;
 	background-repeat: repeat-y;
 	background-size: contain;
-	filter: opacity(0.8);
+	filter: opacity(0.6);
 	will-change: transform;
 
 	@include media(desktop) {
