@@ -44,11 +44,22 @@ const Usefull: React.FC = () => {
 				<li className="usefull__item usefull__item--weather">
 					<Text tag="span">
 						<a
-							href="https://www.google.com/search?q=погода+курган+3+июня+2025"
+							href="https://www.google.com/search?q=погода+курган+3+июля+2025"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							Погода на 3 июня
+						</a>
+					</Text>
+				</li>
+				<li className="usefull__item usefull__item--pivo">
+					<Text tag="span">
+						<a
+							href="https://www.google.com/search?q=Курганский+пивоваренный+завод"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Чем заняться в Курган
 						</a>
 					</Text>
 				</li>

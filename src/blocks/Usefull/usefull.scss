@@ -28,7 +28,7 @@
 // Канал в Телеграмм - маленькое белое пятно
 .usefull__item--telegram-channel {
 	&::before {
-		top: 15%;
+		top: -24%;
 		left: 15%;
 		width: 60%;
 		height: 170%;
@@ -52,7 +52,7 @@
 // Телеграмм Жени - среднезеленое пятно
 .usefull__item--telegram-zhenya {
 	&::before {
-		top: 2.5%;
+		top: -24%;
 		left: 0;
 		width: 60%;
 		height: 170%;
@@ -76,7 +76,7 @@
 .usefull__item--telegram-agneta {
 	&::before {
 		top: -28%;
-		left: 15%;
+		left: 32%;
 		width: 60%;
 		height: 170%;
 		background-color: #EFD2CA; // светло-персиковый
@@ -99,7 +99,7 @@
 // PDF - кремовое пятно
 .usefull__item--pdf {
 	&::before {
-		top: -24%;
+		top: -32%;
 		left: 24%;
 		width: 60%;
 		height: 170%;
@@ -120,11 +120,34 @@
 	}
 }
 
+.usefull__item--pivo {
+	&::before {
+		top: -32%;
+		left: 24%;
+		width: 60%;
+		height: 170%;
+		background-color: #E2ECF5; // Голубой
+		border-radius: 65% 35% 72% 28% / 44% 56% 44% 56%;
+		transform: rotate(-200deg);
+
+		@include media(tablet, desktop) {
+			top: -15%;
+			left: 0;
+			width: 55%;
+			height: 220%;
+		}
+	}
+
+	&:hover::before {
+		transform: rotate(-20deg) scale(1.08);
+	}
+}
+
 // Погода - бирюзовое пятно
 .usefull__item--weather {
 	&::before {
 		top: 0;
-		left: -5%;
+		left: 5%;
 		width: 60%;
 		height: 170%;
 		background-color: #A4C4BE; // средний бирюзовый

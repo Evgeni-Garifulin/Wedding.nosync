@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "npm run build && rm -rf ../sales-website/* && cp -r public/* ../sales-website/ && cd ../sales-website && git pull && git add -A && git commit -am \"deploy\" && git push"
+    "deploy": "npm run build && git add -A && git commit -am \"deploy\" && git push"
   },
   "dependencies": {
     "framer-motion": "^12.11.3",
