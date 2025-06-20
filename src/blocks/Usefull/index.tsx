@@ -59,7 +59,7 @@ const Usefull: React.FC = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Чем заняться в Курган
+							Чем заняться в Кургане
 						</a>
 					</Text>
 				</li>

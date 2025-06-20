@@ -41,6 +41,8 @@
 	left: 20px;
 	width: 60px;
 	height: 60px;
+	transform: translateX(0);
+	opacity: 1;
 	animation: arrow-bounce 2s ease-in-out infinite;
 	transition: transform .3s, opacity .3s;
 }
