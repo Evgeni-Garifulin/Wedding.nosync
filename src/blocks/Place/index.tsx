@@ -55,7 +55,7 @@ const Place: React.FC = () => {
 			<Button
 				size="lg"
 				block
-				href="yandexnavi://build_route_on_map?lat_from=55.74&lon_from=37.60&lat_to=55.391786&lon_to=65.381841"
+				href="yandexnavi://build_route_on_map?lat_to=55.391786&lon_to=65.381841"
 				rel="noopener noreferrer"
 			>
 				Яндекс навигатор
