@@ -66,7 +66,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 				>
 					{isPlaying ? (
 						<img
-							src="./icons/pause.svg"
+							src="/icons/pause-button.svg"
 							alt="выкл"
 							width="40"
 							height="40"
@@ -75,7 +75,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 						/>
 					) : (
 						<img
-							src="./icons/play.svg"
+							src="/icons/play-button.svg"
 							alt="вкл"
 							width="40"
 							height="40"
@@ -103,7 +103,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 				</Text>
 			</div>
 			<img
-				src="./icons/turn-on.svg"
+				src="/icons/turn-on.svg"
 				alt="Включи"
 				className="audio-player__arrow"
 				width="60"
