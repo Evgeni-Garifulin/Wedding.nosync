@@ -18,7 +18,7 @@ const MainInfo: React.FC = () => {
 				Если вы&nbsp;хотите подарить цветы (лучше все таки подарить)&nbsp;&mdash; можно принести 3-5-7 цветочков без обертки, которые мы&nbsp;используем для стилизации <br /><br />
 			</Text>
 			<Text>
-				Расцветка цветов
+				Расцветка для цветов:
 			</Text>
 			<ul className="main-info__flowers">
 				<li className="main-info__flower main-info__flower--white">
@@ -54,7 +54,7 @@ const MainInfo: React.FC = () => {
 				И пожалуйста, пройдите опрос в&nbsp;группе. Вы&nbsp;нам очень поможете!
 			</Text>
 
-			<Button size="lg" href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
+			<Button size="lg" block href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
 				Канал в Телеграмм
 			</Button>
 		</Section>
