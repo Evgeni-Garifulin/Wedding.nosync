@@ -30,9 +30,10 @@ const Place: React.FC = () => {
 	return (
 		<Section id="place" title="Место сбора:">
 			<Text font="arvo" color="black">
-				03&nbsp;07&nbsp;25&nbsp;/ 17:00 <br /><Text font="arvo" color="accent" tag="span" className="hero__countdown">
-					{formatCountdown()}
-				</Text>
+				03&nbsp;07&nbsp;25&nbsp;/ 17:00 <br />
+			</Text>
+			<Text font="arvo" color="accent" tag="span" className="hero__countdown">
+				{formatCountdown()}
 			</Text>
 			<Text>
 				Курганский стрелковый клуб<br />
@@ -50,7 +51,7 @@ const Place: React.FC = () => {
 				/>
 			</div>
 			<Text>
-				Кнопка навигатора для лиги лени <br/>(нужно приложение)
+				Кнопка навигатора для лиги лени <br />(нужно приложение)
 			</Text>
 			<Button
 				size="lg"

@@ -4,16 +4,39 @@ import './audio-player.scss';
 import { Text } from '@components';
 import cn from 'classnames';
 
-interface AudioPlayerProps {
+interface AudioTrack {
 	src: string;
-	title?: string;
+	title: string;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тролль - Невеста" }) => {
+interface AudioPlayerProps {
+	tracks: AudioTrack[];
+}
+
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [duration, setDuration] = useState(0);
 	const [currentTime, setCurrentTime] = useState(0);
+	const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+	const [shuffledTracks, setShuffledTracks] = useState<AudioTrack[]>([]);
 	const audioRef = useRef<HTMLAudioElement>(null);
+
+	// Функция для перемешивания массива
+	const shuffleArray = (array: AudioTrack[]) => {
+		const shuffled = [...array];
+		for (let i = shuffled.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+		}
+		return shuffled;
+	};
+
+	// Перемешиваем треки при инициализации
+	useEffect(() => {
+		setShuffledTracks(shuffleArray(tracks));
+	}, [tracks]);
+
+	const currentTrack = shuffledTracks[currentTrackIndex];
 
 	const togglePlayPause = () => {
 		if (audioRef.current) {
@@ -24,6 +47,12 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 			}
 			setIsPlaying(!isPlaying);
 		}
+	};
+
+	const nextTrack = () => {
+		const nextIndex = (currentTrackIndex + 1) % shuffledTracks.length;
+		setCurrentTrackIndex(nextIndex);
+		setCurrentTime(0);
 	};
 
 	const formatTime = (time: number) => {
@@ -38,15 +67,32 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 
 		const updateTime = () => setCurrentTime(audio.currentTime);
 		const updateDuration = () => setDuration(audio.duration);
+		const handleEnded = () => {
+			nextTrack();
+		};
 
 		audio.addEventListener('timeupdate', updateTime);
 		audio.addEventListener('loadedmetadata', updateDuration);
+		audio.addEventListener('ended', handleEnded);
 
 		return () => {
 			audio.removeEventListener('timeupdate', updateTime);
 			audio.removeEventListener('loadedmetadata', updateDuration);
+			audio.removeEventListener('ended', handleEnded);
 		};
-	}, []);
+	}, [currentTrackIndex, shuffledTracks.length]);
+
+	// Автовоспроизведение при смене трека
+	useEffect(() => {
+		if (audioRef.current && isPlaying) {
+			audioRef.current.play();
+		}
+	}, [currentTrackIndex]);
+
+	// Если треки еще не перемешаны, не рендерим плеер
+	if (shuffledTracks.length === 0 || !currentTrack) {
+		return null;
+	}
 
 	return (
 		<div className={cn('audio-player',
@@ -54,9 +100,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 		)}>
 			<audio
 				ref={audioRef}
-				src={src}
+				src={currentTrack.src}
 				preload="auto"
-				loop
 			/>
 
 			<div className="audio-player__content">
@@ -86,15 +131,20 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 				</button>
 
 				<div className="audio-player__info">
-					<div className="audio-player__title">{title}</div>
+					<div className="audio-player__title">
+						{currentTrack.title}
+						<span className="audio-player__track-counter">
+							({currentTrackIndex + 1}/{shuffledTracks.length})
+						</span>
+					</div>
 					<div className="audio-player__time">
 						{formatTime(currentTime)} / {formatTime(duration)}
 					</div>
 				</div>
 				<Text tag="span" className="audio-player__download">
 					<a
-						href={src}
-						download={src}
+						href={currentTrack.src}
+						download={currentTrack.src}
 						target="_blank"
 						rel="noopener noreferrer"
 					>

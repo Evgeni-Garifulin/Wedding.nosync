@@ -103,7 +103,24 @@ const Layout: React.FC<LayoutProps> = ({
 				</div>
 			</div>
 			<AudioPlayer
-				src="/audio/mumiy-trol_nevesta.mp3"
+				tracks={[
+					{
+						src: "/audio/mumiy-trol_nevesta.mp3",
+						title: "Мумий Тролль - Невеста"
+					},
+					{
+						src: "/audio/Naik-Borzov_lodna-ona.mp3",
+						title: "Найк Борзов - Лодка она"
+					},
+					{
+						src: "/audio/Naik-Borzov_loshadka.mp3",
+						title: "Найк Борзов - Лошадка"
+					},
+					{
+						src: "/audio/mumiy-trol_delphini.mp3",
+						title: "Мумий Тролль - Дельфины"
+					}
+				]}
 			/>
 		</>
 	);
