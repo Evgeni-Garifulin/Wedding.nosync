@@ -28,6 +28,7 @@ const MainInfo: React.FC = () => {
 					alt="Агнета"
 					width="871"
 					height="1016"
+					loading="lazy"
 					className="remember__image"
 				/>
 				<img
@@ -36,6 +37,7 @@ const MainInfo: React.FC = () => {
 					className="remember__arrow"
 					width="100"
 					height="80"
+					loading="lazy"
 				/>
 			</div>
 			<Text tag="span" className="remember__download">

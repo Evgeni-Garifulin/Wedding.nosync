@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
 	return (
 		<Section id="intro">
 			<Text font="arvo" color="black">
-				03&nbsp;06&nbsp;25&nbsp;/ 17:00
+				03&nbsp;07&nbsp;25&nbsp;/ 17:00
 			</Text>
 			<Text tag="span">
 				<a
@@ -59,6 +59,7 @@ const HeroSection: React.FC = () => {
 			<img
 				src="/icons/leaf.svg"
 				alt="Красивый листочек"
+				loading="lazy"
 				width={160}
 				height={100}
 			/>

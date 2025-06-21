@@ -106,6 +106,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "Мумий Тр
 				src="/icons/turn-on.svg"
 				alt="Включи"
 				className="audio-player__arrow"
+				loading="lazy"
 				width="60"
 				height="60"
 			/>

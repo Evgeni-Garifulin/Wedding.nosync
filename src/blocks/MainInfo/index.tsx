@@ -26,6 +26,7 @@ const MainInfo: React.FC = () => {
 					<img
 						src="/icons/flower-1.svg"
 						alt="Белый цветок>"
+						loading="lazy"
 						width={50}
 						height={100}
 					/>
@@ -35,6 +36,7 @@ const MainInfo: React.FC = () => {
 					<img
 						src="/icons/flower-2.svg"
 						alt="Зеленый цветок"
+						loading="lazy"
 						width={50}
 						height={100}
 					/>
@@ -44,6 +46,7 @@ const MainInfo: React.FC = () => {
 					<img
 						src="/icons/flower-3.svg"
 						alt="Светло розовый цветок"
+						loading="lazy"
 						width={50}
 						height={100}
 					/>

@@ -11,7 +11,7 @@ const Usefull: React.FC = () => {
 				<li className="usefull__item usefull__item--telegram-channel">
 					<Text tag="span">
 						<a href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
-							Общий канал в Телеграмм
+							Общий канал в&nbsp;Телеграмм
 						</a>
 					</Text>
 				</li>
@@ -48,7 +48,7 @@ const Usefull: React.FC = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Погода на 3 июня
+							Погода на&nbsp;3&nbsp;июля
 						</a>
 					</Text>
 				</li>
@@ -59,13 +59,13 @@ const Usefull: React.FC = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Чем заняться в Кургане
+							Чем заняться в&nbsp;Кургане
 						</a>
 					</Text>
 				</li>
 			</ul>
 			<Text>
-				В будущем добавится ссылка на фото с праздника
+				В&nbsp;будущем добавится ссылка на&nbsp;фото с&nbsp;праздника
 			</Text>
 		</Section>
 	);
