@@ -58,7 +58,7 @@ const MainInfo: React.FC = () => {
 			</Text>
 
 			<Button size="lg" block href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
-				Канал в Телеграмм
+				Канал в Телеграм
 			</Button>
 		</Section>
 	);

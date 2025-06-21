@@ -18,14 +18,14 @@ const Usefull: React.FC = () => {
 				<li className="usefull__item usefull__item--telegram-zhenya">
 					<Text tag="span">
 						<a href="https://t.me/evgeni_garifulin" target="_blank" rel="noopener noreferrer">
-							Телеграмм Жени
+							Телеграм Жени
 						</a>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--telegram-agneta">
 					<Text tag="span">
 						<a href="https://t.me/voytovich_agn" target="_blank" rel="noopener noreferrer">
-							Телеграмм Агнеты
+							Телеграм Агнеты
 						</a>
 					</Text>
 				</li>
