@@ -11,10 +11,10 @@
 		align-items: center;
 		text-align: center;
 	}
+}
 
-	@include media(desktop) {
-		min-height: 100vh;
-	}
+section[id] {
+	scroll-margin-top: 20px;
 }
 
 .section__inner {

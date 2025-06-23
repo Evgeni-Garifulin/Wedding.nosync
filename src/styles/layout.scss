@@ -31,6 +31,7 @@ html {
 
 body {
 	overflow-x: hidden;
+	scroll-behavior: smooth !important;
 }
 
 #gatsby-focus-wrapper {
@@ -105,6 +106,10 @@ a {
 
 	@include media(tablet) {
 		padding-block: 60px;
+	}
+
+	@include media(desktop) {
+		padding-block: 120px;
 	}
 }
 

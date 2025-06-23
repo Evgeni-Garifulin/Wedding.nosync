@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const HeadBase: React.FC = () => {
 	return (
-		<Helmet htmlAttributes={{ lang: 'en' }}>
+		<Helmet htmlAttributes={{ lang: 'ru' }}>
 			<base href="/" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge" />

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollSmoother from 'gsap/ScrollSmoother';
-import { AudioPlayer } from '@components';
+import { AudioPlayer, Menu } from '@components';
 import HeadBase from '../HeadBase';
 import Meta from '../Meta';
 
@@ -16,6 +16,7 @@ export interface LayoutProps {
 	image?: string;
 	title?: string;
 	keywords?: string;
+	menuTabs?: MenuTabs[];
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -24,6 +25,7 @@ const Layout: React.FC<LayoutProps> = ({
 	image,
 	title,
 	keywords,
+	menuTabs,
 }) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -34,13 +36,6 @@ const Layout: React.FC<LayoutProps> = ({
 		if (!wrapperRef.current || !contentRef.current) return;
 
 		const ctx = gsap.context(() => {
-			const smoother = ScrollSmoother.create({
-				wrapper: wrapperRef.current!,
-				content: contentRef.current!,
-				smooth: 0.5,
-				effects: true,
-			});
-
 			// Параллакс для цветов
 			if (leftFlowersRef.current && rightFlowersRef.current) {
 				gsap.to(leftFlowersRef.current, {
@@ -122,6 +117,7 @@ const Layout: React.FC<LayoutProps> = ({
 					}
 				]}
 			/>
+			{menuTabs && <Menu tabs={menuTabs} />}
 		</>
 	);
 };

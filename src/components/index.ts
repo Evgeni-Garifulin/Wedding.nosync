@@ -10,3 +10,4 @@ export { default as Typography } from "./Typography";
 export { default as Picture } from "./Picture";
 export { default as Section } from "./Section";
 export { default as AudioPlayer } from "./AudioPlayer";
+export { default as Menu } from "./Menu";

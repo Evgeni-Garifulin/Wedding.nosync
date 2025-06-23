@@ -6,14 +6,17 @@ $cl-white: #FFF;
 $cl-pink: #FAFCF8;
 
 /* Red */
-$cl-red: #F93E3E;
-$cl-red-dark: #F9515B;
+$cl-red: #FF383C;
+$cl-red-dark: #FF431D;
 
 /* Yellow */
-$cl-yellow: #FFC224;
+$cl-yellow: #FFCA1D;
 
 /* Brown */
-$cl-brown: #B48770;
+$cl-brown: #AC7F1D;
+
+/* Blue */
+$cl-blue: #0088E1;
 
 /* Green */
 $cl-green: #404B43;
@@ -38,5 +41,6 @@ $border-white-30: $ca-white-30;
 /* TYPO COLORS */
 $text-default: $cl-green;
 $text-accent: $cl-red-dark;
+$text-blue: $cl-blue;
 $text-black: $cl-black;
 $text-contrast: $cl-pink;

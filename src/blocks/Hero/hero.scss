@@ -2,10 +2,13 @@
 
 .intro {
 	.section__inner {
-		@include media(mobile, tablet) {
-			align-items: center;
-			min-height: 100vh;
-			text-align: center;
+		align-items: center;
+		margin-top: -64px;
+		min-height: 100vh;
+		text-align: center;
+
+		@include media(tablet, desktop) {
+			margin-top: -80px;
 		}
 	}
 }
