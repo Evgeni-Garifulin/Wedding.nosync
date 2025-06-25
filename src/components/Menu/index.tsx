@@ -56,14 +56,14 @@ const Menu: React.FC<MenuProps> = ({
 			setBgStyle({
 				width: `${offsetWidth}px`,
 				height: `auto`,
-				transform: `translate(${offsetLeft - parentPaddingLeft}px, 0) scale(1.2, 1.36)`,
+				transform: `translate(${offsetLeft - parentPaddingLeft}px, 0) scale(1.24, 1.52)`,
 				display: "flex",
 			});
 		} else {
 			setBgStyle({
 				width: `auto`,
 				height: `${offsetHeight}px`,
-				transform: `translate(0, ${offsetTop - parentPaddingTop + 6}px) scale(1.2, 1.36)`,
+				transform: `translate(0, ${offsetTop - parentPaddingTop + 6}px) scale(1.1, 1.16)`,
 				display: "flex",
 			});
 		}
