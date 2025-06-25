@@ -1,46 +1,71 @@
 :root {
 /* Basic colors */
-	--cl-black: #000;
-	--cl-white: #FFF;
+
+	--cl-black-raw: 0, 0, 0;
+	--cl-white-raw: 255, 255, 255;
+	--cl-pink-raw: 250, 252, 248;
+	--cl-red-raw: 255, 56, 60;
+	--cl-red-dark-raw: 255, 67, 29;
+	--cl-yellow-raw: 255, 202, 29;
+	--cl-brown-raw: 172, 127, 29;
+	--cl-green-raw: 64, 75, 67;
+	--cl-blue-raw: 0, 136, 225;
+
+	--cl-black: rgb(var(--cl-black-raw));
+	--cl-white: rgb(var(--cl-white-raw));
 
 	/* Pink */
-	--cl-pink: #FAFCF8;
+	--cl-pink: rgb(var(--cl-pink-raw));
 
 	/* Red */
-	--cl-red: #FF383C;
-	--cl-red-dark: #FF431D;
+	--cl-red: rgb(var(--cl-red-raw));
+	--cl-red-dark: rgb(var(--cl-red-dark-raw));
 
 	/* Yellow */
-	--cl-yellow: #FFCA1D;
+	--cl-yellow: rgb(var(--cl-yellow-raw));
 
 	/* Brown */
-	--cl-brown: #AC7F1D;
+	--cl-brown: rgb(var(--cl-brown-raw));
 
 	/* Blue */
-	--cl-blue: #0088E1;
+	--cl-blue: rgb(var(--cl-blue-raw));
 
 	/* Green */
-	--cl-green: #404B43;
+	--cl-green: rgb(var(--cl-green-raw));
 
 	/* ALPHA COLORS */
-	--ca-white-40: rgba(var(--cl-white), .4);
-	--ca-white-30: rgba(var(--cl-white), .3);
-	--ca-white-10: rgba(var(--cl-white), .1);
-	--ca-green-30: rgba(var(--cl-green), .3);
+	--ca-black-80: rgba(var(--cl-black-raw), .8);
+	--ca-black-10: rgba(var(--cl-black-raw), .1);
+	--ca-white-60: rgba(var(--cl-white-raw), .6);
+	--ca-white-40: rgba(var(--cl-white-raw), .4);
+	--ca-white-30: rgba(var(--cl-white-raw), .3);
+	--ca-white-10: rgba(var(--cl-white-raw), .1);
+	--ca-green-30: rgba(var(--cl-green-raw), .3);
 
 	/* BACKGROUNDS */
-	--bg-layout: var(--cl-pink);
-	--bg-brown: var(--cl-brown);
+	--bg-layout: rgb(var(--cl-pink-raw));
+	--bg-brown: rgb(var(--cl-brown-raw));
 	--bg-white-40: var(--ca-white-40);
 
 	/* BORDER COLORS */
-	--border-white: var(--cl-white);
+	--border-white: rgb(var(--cl-white-raw));
 	--border-white-30: var(--ca-white-30);
 
 	/* TYPO COLORS */
-	--text-default: var(--cl-green);
-	--text-accent: var(--cl-red);
-	--text-blue: var(--cl-blue);
-	--text-black: var(--cl-black);
-	--text-contrast: var(--cl-pink);
+	--text-default: rgb(var(--cl-green-raw));
+	--text-accent: rgb(var(--cl-red-raw));
+	--text-blue: rgb(var(--cl-blue-raw));
+	--text-black: rgb(var(--cl-black-raw));
+	--text-contrast: rgb(var(--cl-pink-raw));
+
+	/* GLASS STYLES */
+	--background-color-glass: var(--ca-white-60);
+
+	--border-glass: 2px solid var(--ca-white-10);
+
+	--shadow-glass: 0 6px 6px var(--ca-black-10);
+	--shadow-glass-lens: 0 0 8px var(--ca-black-10);
+
+	--filter-glass: blur(8px) saturate(170%) brightness(0.96);
+	--filter-shadow: drop-shadow(var(--ca-black-80) 0 1 8px);
 }

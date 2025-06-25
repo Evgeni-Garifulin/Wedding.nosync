@@ -4,7 +4,7 @@ import { useResponsive } from '@hooks';
 import cn from 'classnames';
 import './menu.scss';
 
-import { Text, Icon } from '@components';
+import { Icon } from '@components';
 
 interface MenuTab {
 	id: string;
@@ -63,7 +63,7 @@ const Menu: React.FC<MenuProps> = ({
 			setBgStyle({
 				width: `auto`,
 				height: `${offsetHeight}px`,
-				transform: `translate(0, ${offsetTop - parentPaddingTop}px) scale(1.2, 1.36)`,
+				transform: `translate(0, ${offsetTop - parentPaddingTop + 6}px) scale(1.2, 1.36)`,
 				display: "flex",
 			});
 		}
@@ -89,18 +89,19 @@ const Menu: React.FC<MenuProps> = ({
 			})}>
 				<button
 					type="button"
-					className="menu-burger__button"
+					className="menu-burger__button liquid-glass"
 					data-test="menu-trigger"
 					aria-haspopup="menu"
 					onClick={clickHandler}
-				/>
-				<Icon name="line-a" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--a" />
-				<Icon name="line-b" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--b" />
+				>
+					<Icon name="line-a" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--a" />
+					<Icon name="line-b" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--b" />
+				</button>
 			</div>
 			<div ref={elementRef} className={cn('menu', className, {
 				'menu--opened': isMenuOpen
 			})}>
-				<nav className="menu__nav">
+				<nav className="menu__nav liquid-glass">
 					<ul
 						className="menu__nav-list"
 						ref={navRef}
@@ -124,7 +125,9 @@ const Menu: React.FC<MenuProps> = ({
 							</li>
 						))}
 					</ul>
-					<span className="menu__lens" style={bgStyle} />
+
+					{/* !To-Do create Lens as separate components */}
+					<span className="liquid-glass liquid-glass-lens" style={bgStyle} />
 				</nav>
 			</div>
 		</>
