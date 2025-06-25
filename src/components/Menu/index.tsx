@@ -4,7 +4,7 @@ import { useResponsive } from '@hooks';
 import cn from 'classnames';
 import './menu.scss';
 
-import { Text } from '@components';
+import { Text, Icon } from '@components';
 
 interface MenuTab {
 	id: string;
@@ -56,14 +56,14 @@ const Menu: React.FC<MenuProps> = ({
 			setBgStyle({
 				width: `${offsetWidth}px`,
 				height: `auto`,
-				transform: `translate(${offsetLeft - parentPaddingLeft}px, 0) scale(1.54)`,
+				transform: `translate(${offsetLeft - parentPaddingLeft}px, 0) scale(1.2, 1.36)`,
 				display: "flex",
 			});
 		} else {
 			setBgStyle({
 				width: `auto`,
 				height: `${offsetHeight}px`,
-				transform: `translate(0, ${offsetTop - parentPaddingTop}px) scale(1.14)`,
+				transform: `translate(0, ${offsetTop - parentPaddingTop}px) scale(1.2, 1.36)`,
 				display: "flex",
 			});
 		}
@@ -84,17 +84,19 @@ const Menu: React.FC<MenuProps> = ({
 
 	return (
 		<>
-			<button
-				type="button"
-				className="menu-burger"
-				data-test="menu-trigger"
-				aria-haspopup="menu"
-				onClick={clickHandler}
-			>
-				<Text color="accent" tag="span">
-					Меню
-				</Text>
-			</button>
+			<div className={cn('menu-burger', {
+				'menu-burger--active': isMenuOpen
+			})}>
+				<button
+					type="button"
+					className="menu-burger__button"
+					data-test="menu-trigger"
+					aria-haspopup="menu"
+					onClick={clickHandler}
+				/>
+				<Icon name="line-a" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--a" />
+				<Icon name="line-b" color="var(--cl-red)" className="menu-burger__icon-line menu-burger__icon-line--b" />
+			</div>
 			<div ref={elementRef} className={cn('menu', className, {
 				'menu--opened': isMenuOpen
 			})}>

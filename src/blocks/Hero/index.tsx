@@ -28,6 +28,9 @@ const HeroSection: React.FC = () => {
 
 	return (
 		<Section id="intro">
+			<Text font="arvo" color="accent" tag="span" className="hero__countdown">
+				{formatCountdown()}
+			</Text>
 			<Text font="arvo" color="black">
 				03&nbsp;07&nbsp;25&nbsp;/ 17:00
 			</Text>
@@ -38,7 +41,7 @@ const HeroSection: React.FC = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Добавить в календарь
+					Добавить в&nbsp;календарь
 				</a>
 			</Text>
 			<Text tag="h1" color="black">
@@ -63,9 +66,6 @@ const HeroSection: React.FC = () => {
 				width={160}
 				height={100}
 			/>
-			<Text font="arvo" color="accent" tag="span" className="hero__countdown">
-				{formatCountdown()}
-			</Text>
 		</Section>
 	);
 };

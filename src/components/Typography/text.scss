@@ -15,13 +15,13 @@
 }
 
 .text--black {
-	color: $text-black;
+	color: var(--text-black);
 }
 
 .text--contrast {
-	color: $text-contrast;
+	color: var(--text-contrast);
 }
 
 .text--accent {
-	color: $text-accent;
+	color: var(--text-accent);
 }

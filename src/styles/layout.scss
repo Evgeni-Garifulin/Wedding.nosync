@@ -19,8 +19,8 @@ html {
 	font-family: $ff-neucha;
 	font-weight: $fw-regular;
 	font-size: $text-p1-fz-mobile;
-	color: $text-default;
-	background-color: $bg-layout;
+	color: var(--text-default);
+	background-color: var(--bg-layout);
 	font-variant-numeric: lining-nums;
 	scroll-behavior: smooth;
 
@@ -48,13 +48,13 @@ main {
 }
 
 ::selection {
-	color: $text-contrast;
-	background: $cl-red;
+	color: var(--text-contrast);
+	background: var(--cl-red);
 }
 
 a {
 	text-decoration: underline;
-	color: $cl-red;
+	color: var(--cl-red);
 
 	&:hover {
 		text-decoration: none;
@@ -67,8 +67,8 @@ a {
 	padding: 16px;
 	max-width: $container-width;
 	white-space: break-spaces;
-	background-color: $bg-white-40;
-	border: 1px solid $border-white-30;
+	background-color: var(--bg-white-40);
+	border: 1px solid var(--border-white-30);
 	border-radius: 24px;
 	backdrop-filter: blur(24px);
 
@@ -101,7 +101,7 @@ a {
 .section+.section {
 	@include media(mobile) {
 		padding-block: 30px;
-		border-top: 1px dashed $ca-green-30;
+		border-top: 1px dashed var(--ca-green-30);
 	}
 
 	@include media(tablet) {

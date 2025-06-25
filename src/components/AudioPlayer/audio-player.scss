@@ -5,15 +5,11 @@
 	bottom: 20px;
 	left: 20px;
 	padding: 8px;
-	background-color: $bg-white-40;
-	border: 1px solid $cl-white;
+	background-color: var(--bg-white-40);
+	border: 1px solid var(--cl-white);
 	border-radius: 16px;
 	z-index: 100;
 	backdrop-filter: blur(8px);
-
-	@include media(desktop) {
-		left: calc(((100vw - $container-width) / 2) + 20px);
-	}
 }
 
 .audio-player__play-btn {

@@ -21,8 +21,8 @@
 }
 
 .button--primary {
-	color: $text-contrast;
-	background: $bg-brown;
+	color: var(--text-contrast);
+	background: var(--bg-brown);
 }
 
 .button--sm {

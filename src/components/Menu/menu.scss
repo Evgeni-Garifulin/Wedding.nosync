@@ -1,19 +1,15 @@
 @use '@styles/vars' as *;
 
-$background-blur: blur(25px) saturate(170%) brightness(0.96);
-$border: 1px solid $ca-white-30;
+$background-blur: blur(8px) saturate(170%) brightness(0.96);
+$border: 2px solid var(--ca-white-80);
 
 .menu {
 	position: fixed;
-	right: 100px;
-	bottom: 100px;
+	right: 68px;
+	bottom: 68px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	z-index: 201;
-
-	@include media(mobile-sm) {
-		right: auto;
-		left: 0;
-	}
 
 	@include media(mobile, tablet) {
 		transform: scale(0) translate(-40px, -40px);
@@ -30,7 +26,6 @@ $border: 1px solid $ca-white-30;
 
 .menu--opened {
 	@include media(mobile, tablet) {
-		right: 82px;
 		transform: scale(1) translate(0, 0);
 	}
 }
@@ -38,8 +33,9 @@ $border: 1px solid $ca-white-30;
 .menu__nav {
 	position: relative;
 	padding: 0 20vw 0 24px;
+	background-color: rgba(255, 255, 255, 0.6);
 	border: $border;
-	border-radius: 32px;
+	border-radius: 16px;
 	box-shadow: 0 6px 6px rgba(0, 0, 0, .05), 0 0 20px rgba(0, 0, 0, .05);
 	user-select: none;
 	backdrop-filter: $background-blur;
@@ -50,12 +46,17 @@ $border: 1px solid $ca-white-30;
 
 	@include media(desktop) {
 		flex-direction: column;
-		padding: 4px 24px;
+		padding: 4px 0;
+		border-radius: 32px;
 	}
 }
 
 .menu__nav-list {
 	list-style: none;
+
+	@include media(mobile, tablet) {
+		padding-block: 12px;
+	}
 
 	@include media(desktop) {
 		display: flex;
@@ -68,20 +69,20 @@ $border: 1px solid $ca-white-30;
 }
 
 .menu__tab {
-	padding: 24px 8px;
+	padding: 12px 8px;
 	white-space: nowrap;
 	text-decoration: none;
-	color: $text-default;
+	color: var(--text-default);
 	transition: color .2s ease-in-out;
 	cursor: pointer;
 	z-index: 20;
 
 	@include media(desktop) {
-		padding: 24px 16px;
+		padding: 24px 40px;
 	}
 
 	&:hover {
-		color: $text-blue;
+		color: var(--text-blue);
 	}
 }
 
@@ -103,28 +104,22 @@ $border: 1px solid $ca-white-30;
 	&::before {
 		content: "";
 		position: absolute;
+		border: 2px solid rgba(255, 255, 255, 0.1);
 		border-radius: inherit;
-		filter: drop-shadow(rgba($cl-black, 0.8) 0 1px 2px);
+		filter: drop-shadow(rgba(0, 0, 0, 0.8) 0 1px 2px);
 		inset: 0;
-
-		@include media(desktop) {
-			border: 2px solid rgba(255, 255, 255, 0.1);
-		}
 	}
 
 	&::after {
+		content: "";
 		position: absolute;
 		top: 6px;
 		right: 12px;
 		left: 12px;
 		height: 8px;
-		background-color: $cl-white;
-		border-radius: 4px;
+		background-color: var(--ca-white-10);
+		border-radius: 50%;
 		filter: opacity(.7) blur(2px);
-
-		@include media(desktop) {
-			content: "";
-		}
 	}
 }
 
@@ -132,7 +127,8 @@ $border: 1px solid $ca-white-30;
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
-	width: 82px;
+	width: 48px;
+	height: 48px;
 	background-color: transparent;
 	border: $border;
 	border-radius: 50%;
@@ -153,7 +149,7 @@ $border: 1px solid $ca-white-30;
 		content: "";
 		position: absolute;
 		border-radius: inherit;
-		filter: drop-shadow(rgba($cl-black, .4) 0 1px 2px);
+		filter: drop-shadow(rgba(var(--cl-black), .4) 0 1px 2px);
 		inset: 0;
 	}
 
@@ -164,6 +160,53 @@ $border: 1px solid $ca-white-30;
 
 	&:active {
 		box-shadow: none;
-		transform: scale(.8);
+	}
+}
+
+.menu-burger__button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	background-image: url('/icons/circle.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: $border;
+	outline: none;
+	cursor: pointer;
+	z-index: 202;
+}
+
+.menu-burger__icon-line {
+	position: absolute;
+	left: 50%;
+	width: 60%;
+	height: 2px;
+	transform-origin: center;
+	transform: translate(-50%, 0) rotate(0deg);
+	transition: transform .2s ease-in-out;
+}
+
+.menu-burger__icon-line--a {
+	top: 18px;
+}
+
+.menu-burger__icon-line--b {
+	top: 28px;
+}
+
+.menu-burger--active {
+	.menu-burger__icon-line--a {
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.menu-burger__icon-line--b {
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(-45deg);
 	}
 }

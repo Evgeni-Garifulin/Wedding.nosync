@@ -1,46 +1,46 @@
-/* Basic */
-$cl-black: #000;
-$cl-white: #FFF;
+:root {
+/* Basic colors */
+	--cl-black: #000;
+	--cl-white: #FFF;
 
-/* Pink */
-$cl-pink: #FAFCF8;
+	/* Pink */
+	--cl-pink: #FAFCF8;
 
-/* Red */
-$cl-red: #FF383C;
-$cl-red-dark: #FF431D;
+	/* Red */
+	--cl-red: #FF383C;
+	--cl-red-dark: #FF431D;
 
-/* Yellow */
-$cl-yellow: #FFCA1D;
+	/* Yellow */
+	--cl-yellow: #FFCA1D;
 
-/* Brown */
-$cl-brown: #AC7F1D;
+	/* Brown */
+	--cl-brown: #AC7F1D;
 
-/* Blue */
-$cl-blue: #0088E1;
+	/* Blue */
+	--cl-blue: #0088E1;
 
-/* Green */
-$cl-green: #404B43;
+	/* Green */
+	--cl-green: #404B43;
 
-/* ALPHA COLORS */
-$ca-white-70: rgba($cl-white, .7);
-$ca-white-40: rgba($cl-white, .4);
-$ca-white-30: rgba($cl-white, .3);
-$ca-green-30: rgba($cl-green, .3);
+	/* ALPHA COLORS */
+	--ca-white-40: rgba(var(--cl-white), .4);
+	--ca-white-30: rgba(var(--cl-white), .3);
+	--ca-white-10: rgba(var(--cl-white), .1);
+	--ca-green-30: rgba(var(--cl-green), .3);
 
-/* BACKGROUNDS */
-$bg-layout: $cl-pink;
-$bg-dark: $cl-green;
-$bg-light: $cl-white;
-$bg-white-40: $ca-white-40;
-$bg-brown: $cl-brown;
+	/* BACKGROUNDS */
+	--bg-layout: var(--cl-pink);
+	--bg-brown: var(--cl-brown);
+	--bg-white-40: var(--ca-white-40);
 
-/* BORDER COLORS */
-$border-white: $cl-white;
-$border-white-30: $ca-white-30;
+	/* BORDER COLORS */
+	--border-white: var(--cl-white);
+	--border-white-30: var(--ca-white-30);
 
-/* TYPO COLORS */
-$text-default: $cl-green;
-$text-accent: $cl-red-dark;
-$text-blue: $cl-blue;
-$text-black: $cl-black;
-$text-contrast: $cl-pink;
+	/* TYPO COLORS */
+	--text-default: var(--cl-green);
+	--text-accent: var(--cl-red);
+	--text-blue: var(--cl-blue);
+	--text-black: var(--cl-black);
+	--text-contrast: var(--cl-pink);
+}
