@@ -1,43 +1,31 @@
 import './section.scss';
-import React, { useRef } from 'react';
 
-import { motion, useInView } from 'framer-motion';
-
-import { Title } from '@components';
+import cn from 'classnames';
+import { Title } from '@components/Typography/Title';
 
 type sectionProps = React.PropsWithChildren & {
-	id?: string;
+	id: string;
+	className?: string;
 	tag?: 'div' | 'section' | 'li';
 	title?: string;
 }
 
 
-const Section: React.FC<sectionProps> = ({
+export const Section: React.FC<sectionProps> = ({
 	id,
+	className,
 	children,
 	tag = 'section',
 	title,
 }) => {
 
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, margin: '-100px' });
-
 	const Tag = tag;
 
 	return (
-		<Tag id={id} className={`section ${id}`}>
-			<motion.div
-				ref={ref}
-				initial={{ opacity: 0, y: 50 }}
-				animate={isInView ? { opacity: 1, y: 0 } : {}}
-				transition={{ duration: 1, ease: 'easeOut' }}
-				className="section__inner"
-			>
-				{title && <Title size="h2">{title}</Title>}
-				{children}
-			</motion.div>
+		<Tag id={id} className={className}>
+			{title && <Title size="h2" className="mb-2 tab:mb-3 desk:mb-4">{title}</Title>}
+			{children}
 		</Tag>
 	);
 };
 
-export default Section;

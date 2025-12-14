@@ -8,7 +8,7 @@ export interface TextProps extends TypographyProps {
 	font?: 'arvo' | 'neucha';
 }
 
-const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) => {
+export const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) => {
 	const {
 		tag = 'p',
 		font = 'neucha',
@@ -32,4 +32,3 @@ const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (props) =>
 	);
 };
 
-export default Text;

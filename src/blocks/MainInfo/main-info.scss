@@ -1,5 +1,13 @@
 @use '@styles/vars' as *;
 
+.main-info {
+	text-align: left;
+
+	@include media(tablet, desktop) {
+		text-align: center;
+	}
+}
+
 .main-info__flowers {
 	display: flex;
 	justify-content: center;

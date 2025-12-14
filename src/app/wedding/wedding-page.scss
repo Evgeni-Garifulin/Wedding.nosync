@@ -1,0 +1,74 @@
+@use '@styles/vars' as *;
+
+.bg-flowers {
+	position: absolute;
+	top: 100px;
+	bottom: 100px;
+	width: 160px;
+	height: calc(100% + 200px);
+	background-image: url('/img/bg-flowers-left@1x.png');
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: contain;
+	filter: opacity(0.6);
+	will-change: transform;
+
+	@include media(desktop) {
+		top: 112px;
+		width: 400px;
+	}
+}
+
+.bg-flowers--top,
+.bg-flowers--bottom {
+	left: 50%;
+	width: 100%;
+	height: 160px;
+	transform: translateX(-50%);
+
+	@include media(desktop) {
+		width: calc(($container-width) + 200px);
+		height: 400px;
+	}
+}
+
+.bg-flowers--top {
+	top: -40px;
+	background-image: url('./img/bg-flowers-bottom@1x.png');
+
+	@include media(desktop) {
+		top: -112px;
+		background-image: url('./img/bg-flowers-bottom@2x.png');
+	}
+}
+
+.bg-flowers--right {
+	right: -60px;
+	background-image: url('./img/bg-flowers-left@1x.png');
+
+	@include media(desktop) {
+		right: calc(((100vw - $container-width) / 2) - 250px);
+		background-image: url('./img/bg-flowers-left@2x.png');
+	}
+}
+
+.bg-flowers--left {
+	left: -60px;
+	background-image: url('./img/bg-flowers-right@1x.png');
+
+	@include media(desktop) {
+		left: calc(((100vw - $container-width) / 2) - 250px);
+		background-image: url('./img/bg-flowers-right@2x.png');
+	}
+}
+
+.bg-flowers--bottom {
+	top: auto;
+	bottom: -40px;
+	background-image: url('./img/bg-flowers-top@1x.png');
+
+	@include media(desktop) {
+		bottom: -112px;
+		background-image: url('./img/bg-flowers-top@2x.png');
+	}
+}

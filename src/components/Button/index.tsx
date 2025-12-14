@@ -1,79 +1,56 @@
-import React from "react";
-import cn from "classnames";
-import Text from "../Typography/Text";
-
 import "./button.scss";
 
-type ButtonProps = {
-	id?: string;
-	state?: "primary" | "light";
+import cn from "classnames";
+import { Icon, type IconProps } from "@components/Icon";
+
+export const ButtonVariant = {
+	primary: "primary",
+	light: "light",
+} as const;
+
+export type ButtonProps<T extends React.ElementType> = {
+	as?: T;
+	variant?: keyof typeof ButtonVariant;
 	size?: "sm" | "lg";
 	href?: string;
 	children: React.ReactNode;
 	block?: boolean;
-	icon?: {
-		position: 'right' | 'left';
-		name: string;
-		width?: number;
-		height?: number;
-		color?: string;
-	};
-} & React.ButtonHTMLAttributes<HTMLButtonElement> &
-	React.AnchorHTMLAttributes<HTMLAnchorElement>;
+	startIcon?: IconProps['name'];
+	endIcon?: IconProps['name'];
+} & Omit<React.ComponentPropsWithoutRef<T>, 'as'>;
 
-const Button: React.FC<ButtonProps> = ({
-	id,
-	state = "primary",
+export const Button: React.FC<ButtonProps<React.ElementType>> = ({
+	as,
+	variant = "primary",
 	size = "sm",
-	href,
 	children,
 	className,
 	block,
+	startIcon,
+	endIcon,
 	...props
 }) => {
 	const buttonClass = cn(
-		"button",
-		`button--${state}`,
-		`button--${size}`,
+		"btn",
+		`btn--${variant}`,
+		`btn--${size}`,
 		{
-			"button--block": block,
+			"btn--block": block,
 		},
 		className
 	);
 
-	const buttonChildren = (
-		<Text
-			tag="span"
-			color={state === "primary" ? undefined : "contrast"}
-		>
-			{children}
-		</Text>
-	)
-
-	if (href) {
-		return (
-			<a
-				id={id}
-				href={href}
-				className={buttonClass}
-				rel="noopener noreferrer"
-				{...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
-			>
-				{buttonChildren}
-			</a>
-		);
-	}
+	const Component = as || 'button';
 
 	return (
-		<button
-			id={id}
+		<Component
 			className={buttonClass}
-			type="button"
 			{...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
 		>
-			{buttonChildren}
-		</button>
+			{startIcon && <Icon name={startIcon} color="white" width={24} height={24} className="btn__icon btn__icon--start" />}
+			{children}
+			{endIcon && <Icon name={endIcon} color="white" width={24} height={24} className="btn__icon btn__icon--end" />}
+		</Component>
 	);
 };
 
-export default Button;

@@ -1,0 +1,1 @@
+export const sprite = require('./monotone.svg').default.src;

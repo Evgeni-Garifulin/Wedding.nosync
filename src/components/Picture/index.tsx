@@ -19,7 +19,7 @@ const getImageType = (src: string): string => {
 	return '';
 };
 
-const Picture: React.FC<PictureProps> = ({
+export const Picture: React.FC<PictureProps> = ({
 	avif = true,
 	webp = true,
 	loading = 'lazy',
@@ -96,4 +96,3 @@ const Picture: React.FC<PictureProps> = ({
 	);
 };
 
-export default Picture;

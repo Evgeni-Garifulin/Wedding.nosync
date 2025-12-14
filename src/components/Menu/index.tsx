@@ -1,12 +1,14 @@
-import React, { useState, useRef } from 'react';
+'use client';
 
-import { useResponsive } from '@hooks';
-import cn from 'classnames';
 import './menu.scss';
+
+import cn from 'classnames';
+import React, { useState, useRef } from 'react';
+import { useResponsive } from '@hooks';
 
 import { Icon } from '@components';
 
-interface MenuTab {
+export interface MenuTab {
 	id: string;
 	label: string;
 	content?: React.ReactNode;
@@ -18,7 +20,7 @@ interface MenuProps {
 	className?: string;
 }
 
-const Menu: React.FC<MenuProps> = ({
+export const Menu: React.FC<MenuProps> = ({
 	tabs,
 	defaultActiveTab,
 	className
@@ -118,7 +120,6 @@ const Menu: React.FC<MenuProps> = ({
 										'menu__tab--active': tab.id === activeTab
 									})}
 									onClick={() => handleTabClick(tab.id)}
-									type="button"
 								>
 									{tab.label}
 								</a>
@@ -133,5 +134,3 @@ const Menu: React.FC<MenuProps> = ({
 		</>
 	);
 };
-
-export default Menu;

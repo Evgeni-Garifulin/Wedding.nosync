@@ -1,28 +1,36 @@
-import React from 'react';
 import './remember.scss';
 
-import { Text, Section, Picture } from '@components';
+import cn from 'classnames';
+import { agneta } from './img/agneta';
 
-import agneta from '@static/img/agneta/agneta';
+import { Text, Section, Picture, Link, List } from '@components';
 
-const MainInfo: React.FC = () => {
+interface RememberProps {
+	className?: string;
+}
+
+export const Remember: React.FC<RememberProps> = async ({ className }) => {
 
 	return (
-		<Section id="remember" title="Памятка!">
+		<Section id="remember" title="Памятка!" className={cn('remember', className)}>
 			<Text>
 				Мы&nbsp;все люди, и&nbsp;в&nbsp;это день давайте уважать друг друга. Поэтому мы&nbsp;просим:
 			</Text>
-			<ul className="list">
-				<li>Просим обойтись без &laquo;Горько&raquo;, просьб станцевать или участвовать в&nbsp;конкурсах&nbsp;&mdash; мы&nbsp;сами решим, что и&nbsp;как хотим сделать.</li>
-				<li>Если вы&nbsp;увидели, что одного из&nbsp;виновников нет со&nbsp;всеми, не&nbsp;переживайте, просто это очень изматывающее событие, нужно немного отдыха всем</li>
-				<li>Давайте проведем вечер без телефона. На&nbsp;входе будет стоять коробка, куда мы&nbsp;попросим сложить гаджеты. На&nbsp;свадьбе будет профессиональный фотограф, прекрасных снимков хватит всем.</li>
-				<li>Тосты приветствуются, но&nbsp;лучше заранее подумать, что сказать. Краткость&nbsp;&mdash; сестра таланта!</li>
-				<li>Не&nbsp;переживайте, если вы&nbsp;не&nbsp;смогли приехать, мы&nbsp;все понимаем</li>
-			</ul>
-			<Text className="remember__warning">
+			<List
+				className="mt-2 tab:mt-3 desk:mt-4"
+				iconType="check-circle"
+				items={[
+					{ text: 'Просим обойтись без &laquo;Горько&raquo;, просьб станцевать или участвовать в&nbsp;конкурсах&nbsp;&mdash; мы&nbsp;сами решим, что и&nbsp;как хотим сделать.' },
+					{ text: 'Если вы&nbsp;увидели, что одного из&nbsp;виновников нет со&nbsp;всеми, не&nbsp;переживайте, просто это очень изматывающее событие, нужно немного отдыха всем' },
+					{ text: 'Давайте проведем вечер без телефона. На&nbsp;входе будет стоять коробка, куда мы&nbsp;попросим сложить гаджеты. На&nbsp;свадьбе будет профессиональный фотограф, прекрасных снимков хватит всем.' },
+					{ text: 'Тосты приветствуются, но&nbsp;лучше заранее подумать, что сказать. Краткость&nbsp;&mdash; сестра таланта!' },
+					{ text: 'Не&nbsp;переживайте, если вы&nbsp;не&nbsp;смогли приехать, мы&nbsp;все понимаем' },
+				]}
+			/>
+			<Text className="remember__warning mt-2 tab:mt-3 desk:mt-4">
 				Правила обязательны, иначе вы&nbsp;рискуете увидеть вот такое (никому не&nbsp;пожелаю):
 			</Text>
-			<div className="remember__image-wrapper">
+			<div className="remember__image-wrapper mt-2 tab:mt-3 desk:mt-4">
 				<Picture
 					srcSet={agneta}
 					alt="Агнета"
@@ -32,7 +40,7 @@ const MainInfo: React.FC = () => {
 					className="remember__image"
 				/>
 				<img
-					src="/icons/arrow.svg"
+					src={require('./icons/arrow.svg').default.src}
 					alt="указатель на Агнету"
 					className="remember__arrow"
 					width="100"
@@ -40,18 +48,16 @@ const MainInfo: React.FC = () => {
 					loading="lazy"
 				/>
 			</div>
-			<Text tag="span" className="remember__download">
-				<a
-					href="/img/agneta/orig/agneta.png"
+			<Text tag="span" className="remember__download mt-2 tab:mt-3 desk:mt-4">
+				<Link
+					href="./img/agneta.png"
 					download="agneta.png"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					Скачать котика
-				</a>
+				</Link>
 			</Text>
 		</Section>
 	);
 };
-
-export default MainInfo;

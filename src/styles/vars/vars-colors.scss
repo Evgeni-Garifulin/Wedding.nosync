@@ -1,6 +1,5 @@
 :root {
 /* Basic colors */
-
 	--cl-black-raw: 0, 0, 0;
 	--cl-white-raw: 255, 255, 255;
 	--cl-pink-raw: 250, 252, 248;
@@ -10,7 +9,6 @@
 	--cl-brown-raw: 172, 127, 29;
 	--cl-green-raw: 64, 75, 67;
 	--cl-blue-raw: 0, 136, 225;
-
 	--cl-black: rgb(var(--cl-black-raw));
 	--cl-white: rgb(var(--cl-white-raw));
 
@@ -60,12 +58,9 @@
 
 	/* GLASS STYLES */
 	--background-color-glass: var(--ca-white-60);
-
 	--border-glass: 2px solid var(--ca-white-10);
-
 	--shadow-glass: 0 0 4px var(--ca-black-10);
 	--shadow-glass-lens: 0 0 8px var(--ca-black-10);
-
 	--filter-glass: blur(8px) saturate(170%) brightness(0.96);
 	--filter-shadow: drop-shadow(var(--ca-black-80) 0 1 8px);
 }

@@ -1,8 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+'use client';
+
 import './audio-player.scss';
 
-import { Text } from '@components';
 import cn from 'classnames';
+import { useState, useRef, useEffect } from 'react';
+import { Text, Link } from '@components';
 
 interface AudioTrack {
 	src: string;
@@ -13,7 +15,7 @@ interface AudioPlayerProps {
 	tracks: AudioTrack[];
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
+export const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [duration, setDuration] = useState(0);
 	const [currentTime, setCurrentTime] = useState(0);
@@ -111,7 +113,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 				>
 					{isPlaying ? (
 						<img
-							src="/icons/pause-button.svg"
+							src={require('./icons/pause-button.svg').default.src}
 							alt="выкл"
 							width="40"
 							height="40"
@@ -120,7 +122,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 						/>
 					) : (
 						<img
-							src="/icons/play-button.svg"
+							src={require('./icons/play-button.svg').default.src}
 							alt="вкл"
 							width="40"
 							height="40"
@@ -142,18 +144,18 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 					</div>
 				</div>
 				<Text tag="span" className="audio-player__download">
-					<a
-						href={currentTrack.src}
-						download={currentTrack.src}
+					<Link
+						href={`./${currentTrack.src}`}
+						download={`${currentTrack.title}.mp3`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						Скачать песню
-					</a>
+					</Link>
 				</Text>
 			</div>
 			<img
-				src="/icons/turn-on.svg"
+				src={require('./icons/turn-on.svg').default.src}
 				alt="Включи"
 				className="audio-player__arrow"
 				loading="lazy"
@@ -163,5 +165,3 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ tracks }) => {
 		</div>
 	);
 };
-
-export default AudioPlayer;

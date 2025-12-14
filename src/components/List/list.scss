@@ -1,0 +1,65 @@
+@use '@styles/vars' as *;
+
+.list {
+	counter-reset: item;
+	display: grid;
+	gap: 16px;
+
+	@include media(tablet, desktop) {
+		gap: 20px;
+	}
+}
+
+.list--ordered {
+	.list__item::before {
+		content: counter(item) ". ";
+		counter-increment: item;
+		text-align: right;
+	}
+
+	&.list--ordered-with-leading-zero {
+		.list__item {
+			grid-template-columns: minmax(auto, 20px) auto;
+
+			&::before {
+				content: counter(item, decimal-leading-zero) ". ";
+			}
+		}
+	}
+}
+
+.list__item {
+	position: relative;
+	line-height: 1.4;
+}
+
+.list__item--with-icon {
+	display: grid;
+	grid-template-columns: minmax(auto, 12px) auto;
+	align-items: center;
+	gap: 12px;
+}
+
+.list__item--align-top {
+	align-items: start;
+
+	.list__icon {
+		margin-top: 2px;
+
+		@include media(desktop) {
+			margin-top: 4px;
+		}
+	}
+}
+
+.list__icon {
+	margin-inline: auto;
+}
+
+// BADGE
+// -----------------------------------------------
+
+.list__badge {
+	margin-top: -4px;
+	margin-left: 8px;
+}

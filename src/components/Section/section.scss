@@ -1,36 +1,5 @@
 @use '@styles/vars' as *;
 
-.section {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: left;
-
-	@include media(tablet, desktop) {
-		align-items: center;
-		text-align: center;
-	}
-}
-
 section[id] {
 	scroll-margin-top: 20px;
-}
-
-.section__inner {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	max-width: 800px;
-	gap: 24px;
-
-	@include media(desktop) {
-		gap: 42px;
-	}
-
-	@include media(tablet, desktop) {
-		align-items: center;
-		text-align: center;
-	}
 }

@@ -1,0 +1,49 @@
+@use '@styles/vars' as *;
+
+.link {
+	display: inline-flex;
+	align-items: center;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	text-decoration: none;
+	font-family: $ff-neucha;
+	outline: none;
+	transition: text-decoration .2s;
+	cursor: pointer;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	&:empty {
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+		}
+	}
+}
+
+.link--clear {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.link--underline {
+	text-decoration: underline;
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+}

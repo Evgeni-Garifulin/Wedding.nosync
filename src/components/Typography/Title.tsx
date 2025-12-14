@@ -8,7 +8,7 @@ export interface TitleProps extends TypographyProps {
 	color?: 'contrast' | 'accent' | 'black';
 }
 
-const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) => {
+export const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) => {
 	const {
 		tag,
 		children,
@@ -34,4 +34,3 @@ const Title: React.FC<TitleProps & React.HTMLAttributes<HTMLElement>> = (props) 
 	);
 };
 
-export default Title;

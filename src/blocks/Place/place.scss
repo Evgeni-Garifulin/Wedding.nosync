@@ -1,13 +1,19 @@
 @use '@styles/vars' as *;
 
 .place {
-	.section__inner {
-		width: 100%;
+	text-align: left;
 
-		@include media(desktop) {
-			padding-inline: 48px;
-			max-width: 100%;
-		}
+	@include media(tablet, desktop) {
+		text-align: center;
+	}
+}
+
+.section__inner {
+	width: 100%;
+
+	@include media(desktop) {
+		padding-inline: 48px;
+		max-width: 100%;
 	}
 }
 

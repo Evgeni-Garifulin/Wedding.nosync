@@ -1,5 +1,13 @@
 @use '@styles/vars' as *;
 
+.usefull {
+	text-align: left;
+
+	@include media(tablet, desktop) {
+		text-align: center;
+	}
+}
+
 .usefull__list {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

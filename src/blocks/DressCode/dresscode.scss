@@ -1,5 +1,13 @@
 @use '@styles/vars' as *;
 
+.dresscode {
+	text-align: left;
+
+	@include media(tablet, desktop) {
+		text-align: center;
+	}
+}
+
 .dresscode__colors {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);

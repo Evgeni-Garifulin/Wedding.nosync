@@ -1,6 +1,6 @@
-export { default as HeroSection } from "./Hero";
-export { default as DressCode } from "./DressCode";
-export { default as MainInfo } from "./MainInfo";
-export { default as Place } from "./Place";
-export { default as Usefull } from "./Usefull";
-export { default as Remember } from "./Remember";
+export { HeroSection } from "./Hero";
+export { DressCode } from "./DressCode";
+export { MainInfo } from "./MainInfo";
+export { Place } from "./Place";
+export { Usefull } from "./Usefull";
+export { Remember } from "./Remember";

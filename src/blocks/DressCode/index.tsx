@@ -1,11 +1,13 @@
-import React from 'react';
 import './dresscode.scss';
 
-import { Section, Text, Title } from '@components';
+import cn from 'classnames';
+import { List, Section, Text, Title } from '@components';
 
-const DressCode: React.FC = () => {
-	console.log('DressCode render');
+interface DressCodeProps {
+	className?: string;
+}
 
+export const DressCode: React.FC<DressCodeProps> = async ({ className }) => {
 	// Теплые тона (5 цветов)
 	const warmTones = [
 		{ color: '#EFD2CA' }, // светло-персиковый
@@ -51,43 +53,37 @@ const DressCode: React.FC = () => {
 		{ color: '#6B8A85' }, // очень темно-бирюзовый
 	];
 
-	const allColors = [
-		...warmTones,
-		...yellowCreamTones,
-		...neutralTones,
-		...greenTones,
-		...turquoiseTones,
-	];
-
-	console.log('Colors count:', allColors.length);
-
 	return (
-		<Section id="dresscode" title="Дресс-код:">
+		<Section id="dresscode" title="Дресс-код:" className={cn('dresscode', className)}>
 			<Text>
 				Мы&nbsp;приглашаем вас одеться в&nbsp;стиле Modern Formal&nbsp;/ Elegant Minimalismalism&nbsp;&mdash; элегантно, но&nbsp;неформально. Подойдут красивые платья, блузки с&nbsp;юбками или брюками, костюмы в&nbsp;мягких тонах. Главное&nbsp;&mdash; чувствовать себя комфортно и&nbsp;уверенно. Избегайте слишком строгих деловых костюмов и&nbsp;спортивной одежды. <br /><br />
 				Подробнее можно спросить <a href="https://t.me/voytovich_agn" target="_blank" rel="noopener noreferrer">Агнету</a>, либо прочитать список ниже:
 			</Text>
-			<ul className="list">
-				<li>Плавные силуэты, чистые линии</li>
-				<li>Монохромные и нейтральные цвета: оливковый, бежевый, карамельный, шампань, бронза</li>
-				<li>Материалы: сатин, шелк, костюмная ткань, креп, трикотаж с люрексом</li>
-				<li>Открытые плечи, разрезы, драпировки — у женщин</li>
-				<li>Без галстуков, но со структурой — у мужчин (рубашки, костюмы, брюки чинос)</li>
-				<li>Обувь: нейтральная, без излишеств — чаще босоножки, лоферы или белые кеды</li>
-			</ul>
-			<Text>
+			<List
+				className="mt-2 tab:mt-3 desk:mt-4"
+				iconType="check-circle"
+				items={[
+					{ text: 'Плавные силуэты, чистые линии' },
+					{ text: 'Монохромные и нейтральные цвета: оливковый, бежевый, карамельный, шампань, бронза' },
+					{ text: 'Материалы: сатин, шелк, костюмная ткань, креп, трикотаж с люрексом' },
+					{ text: 'Открытые плечи, разрезы, драпировки — у женщин' },
+					{ text: 'Без галстуков, но со структурой — у мужчин (рубашки, костюмы, брюки чинос)' },
+					{ text: 'Обувь: нейтральная, без излишеств — чаще босоножки, лоферы или белые кеды' },
+				]}
+			/>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Мы&nbsp;будем очень рады, если вы&nbsp;поддержите нашу цветовую гамму в&nbsp;своих нарядах. Выберите любой из&nbsp;представленных оттенков&nbsp;&mdash; от&nbsp;нежных бежевых до&nbsp;глубоких зеленых тонов. Это поможет создать гармоничную и&nbsp;элегантную атмосферу нашего праздника.
 			</Text>
 
-			<Title size="h2">
+			<Title size="h2" className="mt-2 tab:mt-3 desk:mt-4">
 				Гамма:
 			</Title>
 
-			<Text>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Теплые тона
 			</Text>
 
-			<div className="dresscode__category">
+			<div className="dresscode__category mt-2 tab:mt-3 desk:mt-4">
 				<div className="dresscode__colors">
 					{warmTones.map((colorItem) => (
 						<div
@@ -100,11 +96,11 @@ const DressCode: React.FC = () => {
 				</div>
 			</div>
 
-			<Text>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Желтые/кремовые тона
 			</Text>
 
-			<div className="dresscode__category">
+			<div className="dresscode__category mt-2 tab:mt-3 desk:mt-4">
 				<div className="dresscode__colors">
 					{yellowCreamTones.map((colorItem) => (
 						<div
@@ -117,11 +113,11 @@ const DressCode: React.FC = () => {
 				</div>
 			</div>
 
-			<Text>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Нейтральные тона
 			</Text>
 
-			<div className="dresscode__category">
+			<div className="dresscode__category mt-2 tab:mt-3 desk:mt-4">
 				<div className="dresscode__colors">
 					{neutralTones.map((colorItem) => (
 						<div
@@ -134,11 +130,11 @@ const DressCode: React.FC = () => {
 				</div>
 			</div>
 
-			<Text>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Зеленые тона
 			</Text>
 
-			<div className="dresscode__category">
+			<div className="dresscode__category mt-2 tab:mt-3 desk:mt-4">
 				<div className="dresscode__colors">
 					{greenTones.map((colorItem) => (
 						<div
@@ -151,11 +147,11 @@ const DressCode: React.FC = () => {
 				</div>
 			</div>
 
-			<Text>
+			<Text className="mt-2 tab:mt-3 desk:mt-4">
 				Бирюзовые тона
 			</Text>
 
-			<div className="dresscode__category">
+			<div className="dresscode__category mt-2 tab:mt-3 desk:mt-4">
 				<div className="dresscode__colors">
 					{turquoiseTones.map((colorItem) => (
 						<div
@@ -170,5 +166,3 @@ const DressCode: React.FC = () => {
 		</Section>
 	);
 };
-
-export default DressCode;

@@ -1,125 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ScrollSmoother from 'gsap/ScrollSmoother';
-import { AudioPlayer, Menu } from '@components';
-import HeadBase from '../HeadBase';
-import Meta from '../Meta';
-
 import '@styles/index.scss';
+import './layout.scss';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import cn from 'classnames';
+import { Menu } from '@components';
+import { type MenuTab } from '@components/Menu';
 
 export interface LayoutProps {
+	className?: string;
 	children: React.ReactNode;
-	description?: string;
-	image?: string;
-	title?: string;
-	keywords?: string;
-	menuTabs?: MenuTabs[];
+	menuTabs?: MenuTab[];
 }
 
-const Layout: React.FC<LayoutProps> = ({
+export const Layout: React.FC<LayoutProps> = ({
 	children,
-	description,
-	image,
-	title,
-	keywords,
 	menuTabs,
+	className,
 }) => {
-	const wrapperRef = useRef<HTMLDivElement>(null);
-	const contentRef = useRef<HTMLDivElement>(null);
-	const leftFlowersRef = useRef<HTMLDivElement>(null);
-	const rightFlowersRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		if (!wrapperRef.current || !contentRef.current) return;
-
-		const ctx = gsap.context(() => {
-			// Параллакс для цветов
-			if (leftFlowersRef.current && rightFlowersRef.current) {
-				gsap.to(leftFlowersRef.current, {
-					y: -400,
-					scrollTrigger: {
-						trigger: contentRef.current,
-						start: "top top",
-						end: "bottom top",
-						scrub: 3,
-					},
-				});
-
-				gsap.to(rightFlowersRef.current, {
-					y: -600,
-					scrollTrigger: {
-						trigger: contentRef.current,
-						start: "top top",
-						end: "bottom top",
-						scrub: 1,
-					},
-				});
-			}
-		}, wrapperRef);
-
-		return () => ctx.revert();
-	}, []);
 
 	return (
 		<>
-			<HeadBase />
-			<Meta
-				description={description}
-				image={image}
-				title={title}
-				keywords={keywords}
-			/>
-			<div id="wrapper" ref={wrapperRef}>
-				<div id="content" ref={contentRef}>
-					<main id="main" className="main">
-						<div
-							className="bg-flowers bg-flowers--top"
-							ref={leftFlowersRef}
-						/>
-						<div
-							className="bg-flowers bg-flowers--right"
-							ref={rightFlowersRef}
-						/>
-						<div
-							className="bg-flowers bg-flowers--bottom"
-							ref={leftFlowersRef}
-						/>
-						<div
-							className="bg-flowers bg-flowers--left"
-							ref={leftFlowersRef}
-						/>
-						<div className="container">
-							{children}
-						</div>
-					</main>
-				</div>
-			</div>
-			<AudioPlayer
-				tracks={[
-					{
-						src: "/audio/Mumiy-troll_nevesta.mp3",
-						title: "Мумий Тролль - Невеста"
-					},
-					{
-						src: "/audio/Naik-Borzov_odna-ona.mp3",
-						title: "Найк Борзов - Одна она"
-					},
-					{
-						src: "/audio/Naik-Borzov_loshadka.mp3",
-						title: "Найк Борзов - Лошадка"
-					},
-					{
-						src: "/audio/Mumiy-troll_delphini.mp3",
-						title: "Мумий Тролль - Дельфины"
-					}
-				]}
-			/>
 			{menuTabs && <Menu tabs={menuTabs} />}
+			<main id="main" className={cn('main', className)}>
+				<div className="container">
+					{children}
+				</div>
+			</main>
 		</>
 	);
 };
 
-export default Layout;

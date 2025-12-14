@@ -1,14 +1,15 @@
 @use '@styles/vars' as *;
 
-.intro {
-	.section__inner {
-		align-items: center;
-		height: 100vh;
-		min-height: max-content;
+.hero {
+	position: relative;
+	text-align: left;
+
+	@include media(tablet, desktop) {
 		text-align: center;
 	}
 }
 
-.hero__countdown {
-	font-variant-numeric: tabular-nums;
+.hero__img {
+	display: block;
+	margin-inline: auto;
 }

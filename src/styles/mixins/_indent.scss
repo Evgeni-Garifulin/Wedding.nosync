@@ -1,0 +1,118 @@
+@use '../vars/vars-indent' as *;
+@use 'mediabreakpoints' as *;
+
+// HELPER FOR OFFSETS MIXIN
+// ===============================================
+
+// Offsets map helper
+$offsets: (
+	"1": $offset-1x,
+	"2": $offset-2x,
+	"3": $offset-3x,
+	"4": $offset-4x,
+	"5": $offset-5x,
+	"6": $offset-6x,
+	"7": $offset-7x,
+	"8": $offset-8x,
+	"10": $offset-10x,
+	"12": $offset-12x,
+	"15": $offset-15x,
+	"20": $offset-20x,
+	"25": $offset-25x,
+	"30": $offset-30x,
+	"50": $offset-50x,
+);
+
+// Properties and classes helper
+$variants: (
+	"margin": m,
+	"margin-block": my,
+	"margin-inline": mx,
+	"margin-top": mt,
+	"margin-right": mr,
+	"margin-bottom": mb,
+	"margin-left": ml,
+	"padding": p,
+	"padding-block": py,
+	"padding-inline": px,
+	"padding-top": pt,
+	"padding-right": pr,
+	"padding-bottom": pb,
+	"padding-left": pl,
+);
+
+// Generate responsive classes with prefixes
+@each $propertyName, $propertyClass in $variants {
+	@each $offsetSize, $offsetValue in $offsets {
+		// Mobile class (no prefix)
+		.#{$propertyClass}-#{$offsetSize} {
+			#{$propertyName}: $offsetValue !important;
+		}
+	}
+
+	@each $offsetSize, $offsetValue in $offsets {
+		// Tablet class with prefix
+		.mob\:#{$propertyClass}-#{$offsetSize} {
+			@include media(mobile) {
+				#{$propertyName}: $offsetValue !important;
+			}
+		}
+
+		// Tablet class with prefix
+		.tab\:#{$propertyClass}-#{$offsetSize} {
+			@include media(tablet) {
+				#{$propertyName}: $offsetValue !important;
+			}
+		}
+	}
+
+	@each $offsetSize, $offsetValue in $offsets {
+		// Desktop class with prefix
+		.desk\:#{$propertyClass}-#{$offsetSize} {
+			@include media(desktop) {
+				#{$propertyName}: $offsetValue !important;
+			}
+		}
+	}
+
+	// None classes for each breakpoint
+	.#{$propertyClass}-none {
+		@include media(mobile) {
+			#{$propertyName}: 0 !important;
+		}
+	}
+
+	.mob\:#{$propertyClass}-none {
+		@include media(mobile) {
+			#{$propertyName}: 0 !important;
+		}
+	}
+
+	.tab\:#{$propertyClass}-none {
+		@include media(tablet) {
+			#{$propertyName}: 0 !important;
+		}
+	}
+
+	.desk\:#{$propertyClass}-none {
+		@include media(desktop) {
+			#{$propertyName}: 0 !important;
+		}
+	}
+}
+
+.mt-auto {
+	margin-top: auto !important;
+}
+
+.tab\:mt-auto {
+	@include media(tablet) {
+		margin-top: auto !important;
+	}
+}
+
+.desk\:mt-auto {
+	@include media(desktop) {
+		margin-top: auto !important;
+	}
+}

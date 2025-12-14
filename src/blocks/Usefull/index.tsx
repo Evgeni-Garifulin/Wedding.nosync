@@ -1,66 +1,70 @@
-import React from 'react';
 import './usefull.scss';
 
-import { Text, Section } from '@components';
+import cn from 'classnames';
+import { Text, Section, Link } from '@components';
 
-const Usefull: React.FC = () => {
+interface UsefullProps {
+	className?: string;
+}
+
+export const Usefull: React.FC<UsefullProps> = async ({ className }) => {
 
 	return (
-		<Section id="usefull" title="Полезные ссылки:">
-			<ul className="usefull__list">
+		<Section id="usefull" title="Полезные ссылки:" className={cn('usefull', className)}>
+			<ul className="usefull__list mt-2 tab:mt-3 desk:mt-4">
 				<li className="usefull__item usefull__item--telegram-channel">
 					<Text tag="span">
-						<a href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
+						<Link href="https://t.me/+PbOq45ueX-9lYzE6" target="_blank" rel="noopener noreferrer">
 							Общий канал в&nbsp;Телеграмм
-						</a>
+						</Link>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--telegram-zhenya">
 					<Text tag="span">
-						<a href="https://t.me/evgeni_garifulin" target="_blank" rel="noopener noreferrer">
+						<Link href="https://t.me/evgeni_garifulin" target="_blank" rel="noopener noreferrer">
 							Телеграм Жени
-						</a>
+						</Link>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--telegram-agneta">
 					<Text tag="span">
-						<a href="https://t.me/voytovich_agn" target="_blank" rel="noopener noreferrer">
+						<Link href="https://t.me/voytovich_agn" target="_blank" rel="noopener noreferrer">
 							Телеграм Агнеты
-						</a>
+						</Link>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--pdf">
 					<Text tag="span">
-						<a
+						<Link
 							href="/pdf/Priglashenie_pdf.pdf"
 							download="Приглашение_на_свадьбу.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							PDF для тех, кому важно
-						</a>
+						</Link>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--weather">
 					<Text tag="span">
-						<a
+						<Link
 							href="https://www.google.com/search?q=погода+курган+3+июля+2025"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							Погода на&nbsp;3&nbsp;июля
-						</a>
+						</Link>
 					</Text>
 				</li>
 				<li className="usefull__item usefull__item--pivo">
 					<Text tag="span">
-						<a
+						<Link
 							href="https://www.google.com/search?q=Курганский+пивоваренный+завод"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							Чем заняться в&nbsp;Кургане
-						</a>
+						</Link>
 					</Text>
 				</li>
 			</ul>
@@ -70,5 +74,3 @@ const Usefull: React.FC = () => {
 		</Section>
 	);
 };
-
-export default Usefull;

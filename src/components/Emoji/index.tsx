@@ -10,7 +10,7 @@ export interface EmojiProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 	block?: boolean;
 }
 
-const Emoji: React.FC<EmojiProps> = ({ name, block, className = '', size = '1em', ...props }) => {
+export const Emoji: React.FC<EmojiProps> = ({ name, block, className = '', size = '1em', ...props }) => {
 	const src = `/emoji/${name}.png`;
 
 	return (
@@ -25,4 +25,3 @@ const Emoji: React.FC<EmojiProps> = ({ name, block, className = '', size = '1em'
 	);
 };
 
-export default Emoji;
