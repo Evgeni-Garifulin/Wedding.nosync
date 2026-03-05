@@ -1,7 +1,8 @@
-import './wedding-page.scss';
-
-import { Layout, AudioPlayer } from '@components';
+import { LayoutLanding, AudioPlayer } from '@components';
 import { HeroSection, DressCode, MainInfo, Place, Usefull, Remember } from '@blocks';
+import { type LayoutLandingProps } from '@components/layout-landing';
+
+import { bgFlowers } from './img/bgFlowers';
 
 const IndexPage: React.FC = () => {
 	const MenuTabs = [
@@ -13,22 +14,26 @@ const IndexPage: React.FC = () => {
 		{ id: 'place', label: 'Место' }
 	]
 
+	const background: LayoutLandingProps['background'] = {
+		top: {
+			srcSet: bgFlowers.top,
+		},
+		right: {
+			srcSet: bgFlowers.right,
+		},
+		bottom: {
+			srcSet: bgFlowers.bottom,
+		},
+		left: {
+			srcSet: bgFlowers.left,
+		},
+	};
+
 	return (
 		<>
-			<div
-				className="bg-flowers bg-flowers--top"
-			/>
-			<div
-				className="bg-flowers bg-flowers--right"
-			/>
-			<div
-				className="bg-flowers bg-flowers--bottom"
-			/>
-			<div
-				className="bg-flowers bg-flowers--left"
-			/>
-			<Layout
+			<LayoutLanding
 				menuTabs={MenuTabs}
+				background={background}
 			>
 				<HeroSection className="pt-20 tab:pt-30 desk:pt-50 pb-15 tab:pb-20 desk:pb-25" />
 				<DressCode className="py-15 tab:py-20 desk:py-25" />
@@ -36,7 +41,7 @@ const IndexPage: React.FC = () => {
 				<Remember className="py-15 tab:py-20 desk:py-25" />
 				<Usefull className="py-15 tab:py-20 desk:py-25" />
 				<Place className="pt-15 tab:pt-20 desk:pt-25 pb-20 tab:pb-30 desk:pb-50" />
-			</Layout>
+			</LayoutLanding>
 			<AudioPlayer
 				tracks={[
 					{

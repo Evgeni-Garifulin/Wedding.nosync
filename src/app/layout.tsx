@@ -1,8 +1,14 @@
 import '@styles/index.scss';
 
 import type { Metadata } from 'next';
+import { neucha, arvo } from '@ui/fonts/localFonts';
+
+export interface LayoutProps {
+	children: React.ReactNode;
+}
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://wiwiwiuwawa.ru'),
 	title: 'Свадьба Агнеты и Жени',
 	description: 'Приглашаем Вас на нашу свадьбу! Мы будем рады видеть Вас в этот важный для нас день!',
 	keywords: ['Свадьба', 'Агнета', 'Женя', 'фитоняшка', 'красавица', 'свадьба в Кургане', 'Курган'],
@@ -14,40 +20,34 @@ export const metadata: Metadata = {
 	},
 	icons: {
 		icon: [
-			{ url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-			{ url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+			{ url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+			{ url: '/favicon.svg', type: 'image/svg+xml' },
 		],
-		shortcut: '/favicon/favicon.ico',
-		apple: '/favicon/apple-touch-icon.png',
+		shortcut: '/favicon.ico',
+		apple: '/apple-touch-icon.png',
 	},
-	manifest: '/favicon/site.webmanifest',
+	manifest: '/site.webmanifest',
 	other: {
-		'apple-mobile-web-app-title': 'Mokka',
+		'apple-mobile-web-app-title': 'WIwiwiUwawa',
 		'msapplication-TileColor': '#F8F8F9',
 	},
 };
 
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	viewportFit: 'cover',
+};
+
 export default function RootLayout({
 	children,
-}: {
-	children: React.ReactNode;
-}) {
+}: LayoutProps) {
 	return (
-		<html lang="ru">
-			<head>
-				<base href="/" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<link
-					href="/sprite/monotone.svg"
-					rel="preload"
-					as="image"
-					type="image/svg+xml"
-				/>
-			</head>
+		<html lang="ru" className={`${neucha.variable} ${arvo.variable}`}>
+			<head />
 			<body>
 				{children}
 			</body>
 		</html>
 	);
-}
+};

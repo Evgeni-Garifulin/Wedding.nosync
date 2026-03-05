@@ -38,17 +38,15 @@
 }
 
 .remember__image {
-	.picture__image {
-		width: 100%;
-		height: auto;
-		max-width: 360px;
-		animation: image-shake .6s ease-in-out infinite;
-		animation-delay: 2s;
+	width: 100%;
+	height: auto;
+	max-width: 360px;
+	animation: image-shake .6s ease-in-out infinite;
+	animation-delay: 2s;
 
-		&:hover {
-			cursor: grab;
-			animation-play-state: paused;
-		}
+	&:hover {
+		cursor: grab;
+		animation-play-state: paused;
 	}
 }
 

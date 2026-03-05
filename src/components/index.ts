@@ -3,7 +3,7 @@ export { Counter } from './Counter';
 export { Icon } from './Icon';
 export { Emoji } from './Emoji';
 export { HeadBase } from './HeadBase';
-export { Layout } from './Layout';
+export { LayoutLanding } from './layout-landing';
 export { Text } from './Typography/Text';
 export { Title } from './Typography/Title';
 export { Link } from './Link';

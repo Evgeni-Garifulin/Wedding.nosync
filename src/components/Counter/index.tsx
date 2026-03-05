@@ -22,7 +22,7 @@ export const Counter: React.FC<CounterProps> = ({ targetDate, expiredText, font 
 
 	const formatCountdown = () => {
 		if (timeLeft.isExpired) {
-			return <Tag color={color} className={className}>{expiredText}</Tag>
+			return <span color={color} className={className}>{expiredText}</span>
 		}
 
 		const parts = [];

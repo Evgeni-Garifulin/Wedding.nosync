@@ -1,22 +1,31 @@
 import type { NextConfig } from 'next';
 import path from 'path';
 
-export const nextConfig: NextConfig = {
+// Hint to disable AVIF image not supported warning
+const originalStderrWrite = process.stderr.write.bind(process.stderr);
+
+process.stderr.write = ((chunk, ...args) => {
+	if (chunk.toString().includes('AVIF image not supported')) {
+		return true;
+	}
+
+	return originalStderrWrite(chunk, ...(args as [encoding?: BufferEncoding, cb?: (err?: Error | null | undefined) => void]));
+});
+
+const nextConfig: NextConfig = {
+	turbopack: {
+		resolveAlias: {
+			'@blocks': 'src/blocks',
+			'@components': 'src/components',
+			'@hooks': 'src/hooks',
+			'@styles': 'src/styles',
+			'@ui': 'ui',
+		},
+	},
 	reactStrictMode: true,
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'src/styles')],
-		additionalData: `@use "vars" as *;`,
-	},
-	webpack: (config) => {
-		// Добавляем алиасы для импортов
-		config.resolve.alias = {
-			...config.resolve.alias,
-			'@blocks': path.resolve(__dirname, 'src/blocks'),
-			'@components': path.resolve(__dirname, 'src/components'),
-			'@hooks': path.resolve(__dirname, 'src/hooks'),
-			'@styles': path.resolve(__dirname, 'src/styles'),
-			'@ui': path.resolve(__dirname, 'ui'),
-		};
-		return config;
 	},
 };
+
+export default nextConfig;
