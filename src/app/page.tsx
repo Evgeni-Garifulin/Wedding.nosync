@@ -1,9 +1,5 @@
-import { LayoutLanding, Link } from '@components';
+import { redirect } from 'next/navigation';
 
-export default function NotFound() {
-	return (
-		<LayoutLanding >
-			<Link href="/wedding/">Пожалуйста перейдите на страницу свадьбы</Link>
-		</LayoutLanding>
-	);
+export default function HomePage() {
+	redirect('/wedding/');
 }
